@@ -68,3 +68,7 @@ With Converge, you’re not just documenting — you’re building a powerful, s
 - Manage multiple projects, versions, clusters, and themes with ease.
 - Leverage a growing ecosystem of prebuilt components to reduce complexity.
 - Ensure a smooth, user-friendly experience for your documentation readers.
+
+### Who is Behind Converge
+
+The **Converge Framework** was founded by [Charrafi Mohamed](https://github.com/CharrafiMed). Later, [Ayoub El Hajji](https://github.com/Ayoubhj866) joined the development process, contributing to the framework's growth and evolution.
