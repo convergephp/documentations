@@ -1,55 +1,57 @@
-## Overview  
+## Overview
 
-The **Converge Framework** is designed to **streamline documentation management** for all types of projects. Whether you're managing:  
+The **Converge Framework** is designed to **streamline documentation management** for all types of projects. Whether you're managing:
 
-- Open-source packages  
-- Private packages  
-- Commercial software  
-- Or any project requiring comprehensive documentation  
+- Open-source packages
+- Private packages
+- Commercial software
+- Or any project requiring comprehensive documentation
 
 Converge simplifies the process and allows you to focus on **writing actual content** in minutes, rather than spending time designing or building a documentation website from scratch.  
+the [converge](https://convergephp.com) docs are managed by converge
+With Converge, you can:
 
-With Converge, you can:  
+- Quickly set up a professional and structured documentation system.
+- Avoid repetitive tasks by leveraging ready-made components and configurations.
+- Benefit from a modular architecture tailored to developers.
 
-- Quickly set up a professional and structured documentation system.  
-- Avoid repetitive tasks by leveraging ready-made components and configurations.  
-- Benefit from a modular architecture tailored to developers.  
+By focusing on content creation rather than infrastructure, Converge empowers developers to deliver high-quality documentation with minimal effort.
 
-By focusing on content creation rather than infrastructure, Converge empowers developers to deliver high-quality documentation with minimal effort.  
+### Multi-Module Support
 
-### Multi-Module Support  
+Converge lets you write fully separate, styled logic documentation for multiple packages or software projects within the same Laravel application. This is achieved using the [module](/modules) system, allowing you to:
 
-Converge lets you write fully separate, styled logic documentation for multiple packages or software projects within the same Laravel application. This is achieved using the [module](/modules) system, allowing you to:  
+- Create distinct modules for different projects.
+- Maintain a unified system while keeping each project isolated.
+- Quickly navigate and manage your docs from a central dashboard.
 
-- Create distinct modules for different projects.  
-- Maintain a unified system while keeping each project isolated.  
-- Quickly navigate and manage your docs from a central dashboard.  
+### Versioning Built-In
 
-### Versioning Built-In  
+Do you have multiple versions of your package or software?
 
-Do you have multiple versions of your package or software?  
+Converge is built with versioning in mind. You can maintain multiple versions of your documentation, with each version having its own dedicated content. Converge handles the complexity for you with simple configurations in the [module provider](/modules/module-provider).
 
-Converge is built with versioning in mind. You can maintain multiple versions of your documentation, with each version having its own dedicated content. Converge handles the complexity for you with simple configurations in the [module provider](/modules/module-provider).  
+### Blade Component Support
 
-### Blade Component Support 
-Converge scans your markdown files and renders any Blade component. It also comes with a set of pre-styled components, ranging from tips to custom code blocks.  
+Converge scans your markdown files and renders any Blade component. It also comes with a set of pre-styled components, ranging from tips to custom code blocks.
 
-Here’s a sneak peek at some of the components:   
+Here’s a sneak peek at some of the components:
 
 ```html
-this is in you mardown file  
-<x-converge::tips 
-    label="this is a self closing one in the multiple line"
-    class="text-purple-500"
-    variant="good"
+this is in you mardown file
+<x-converge::tips
+  label="this is a self closing one in the multiple line"
+  class="text-purple-500"
+  variant="good"
 />
 ```
+
 this what it generate:
 
-<x-converge::tips 
-    label="this is a self closing one in the multiple line"
-    class="text-purple-500"
-    variant="good"
+<x-converge::tips
+label="this is a self closing one in the multiple line"
+class="text-purple-500"
+variant="good"
 />
 
 Magic, right? We’ve built a full Markdown extension for the [commonmark package](https://commonmark.thephpleague.com/) to do that for ya.
