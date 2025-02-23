@@ -19,25 +19,25 @@ To start building documentation for your package or software, you need to create
 Converge comes with a pre-built command to generate the Module Provider:
 
 ```shell
-    php artisan converge:make-module ConvergeDocsModuleProvider
+    php artisan converge:make-module ConvergeDocs
 ```
 
 you can specify the path where your documentation resides by using the ``--path`` flag:
 
 ```shell
-    php artisan converge:make-module ConvergeDocsModuleProvider --path=../../../docs
+    php artisan converge:make-module ConvergeDocs --path=../../../docs
 ```
 
 Alternatively, you can use Laravel path helpers like ``base_path():``
 
 ```shell
-    php artisan converge:make-module ConvergeDocsModuleProvider --path="base_path('docs')"
+    php artisan converge:make-module ConvergeDocs --path="base_path('docs')"
 ```
 
 to configure the route where the documentation will be accessed, use the ``--route`` flag:
 
 ```shell
-    php artisan converge:make-module ConvergeDocsModuleProvider --path="base_path('docs')" --route="/docs"
+    php artisan converge:make-module ConvergeDocs --path="base_path('docs')" --route="/docs"
 ``` 
 
 At this point, if you have valid markdown files under the folder you specified in the ``--path`` flag (e.g., ``base_path('docs')``), you can test the endpoint you defined in the ``--route`` flag (e.g., ``/docs``).
