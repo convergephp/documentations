@@ -22,7 +22,7 @@ Converge comes with a pre-built command to generate the Module Provider:
     php artisan converge:make-module ConvergeDocs
 ```
 
-you can specify the path where your documentation resides by using the ``--path`` flag:
+you can specify the path where your documentations resides by using the ``--path`` flag:
 
 ```shell
     php artisan converge:make-module ConvergeDocs --path=../../../docs
@@ -40,7 +40,7 @@ to configure the route where the documentation will be accessed, use the ``--rou
     php artisan converge:make-module ConvergeDocs --path="base_path('docs')" --route="/docs"
 ``` 
 
-At this point, if you have valid markdown files under the folder you specified in the ``--path`` flag (e.g., ``base_path('docs')``), you can test the endpoint you defined in the ``--route`` flag (e.g., ``/docs``).
+At this point, if you have valid markdown files under the folder you specified in the ``--path`` flag (e.g., ``base_path('docs')``), you can test the endpoint you defined in the ``--route`` flag (e.g., ``/docs``, ``localhost:8000/docs``, ``convergephp.test/docs``).
 
 ### Further Configuration
 
