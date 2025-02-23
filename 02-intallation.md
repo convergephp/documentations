@@ -10,7 +10,7 @@ Converge v1.x is written in PHP, JavaScript, and leverages several Laravel compo
 - Laravel 11+
 
 ```shell
-    composer require converge/framework
+    composer require convergephp/converge
 ```
 ### Generate the Module Provider
 
