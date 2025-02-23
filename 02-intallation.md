@@ -14,7 +14,9 @@ Converge v1.x is written in PHP, JavaScript, and leverages several Laravel compo
 ```
 ### Generate the Module Provider
 
-To start building documentation for your package or software, you need to create a **Module Provider** that will handle the configuration. Converge comes with a pre-built command to generate the Module Provider:
+To start building documentation for your package or software, you need to create a **Module Provider** that will handle the configuration.
+
+Converge comes with a pre-built command to generate the Module Provider:
 
 ```shell
     php artisan converge:make-module ConvergeDocsModuleProvider
