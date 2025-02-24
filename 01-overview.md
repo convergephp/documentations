@@ -73,4 +73,6 @@ With Converge, you’re not just documenting — you’re building a powerful, s
 
 ### Who is Behind Converge
 
-The **Converge Framework** was founded by [Charrafi Mohamed](https://github.com/CharrafiMed). Later, [Ayoub El Hajji](https://github.com/Ayoubhj866) joined the development process, contributing to the framework's growth and evolution.
+The **Converge Framework** was founded by:
+- [Charrafi Mohamed](https://github.com/CharrafiMed).
+- [Ayoub El Hajji](https://github.com/Ayoubhj866) 
