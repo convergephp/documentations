@@ -7,7 +7,7 @@ The **Converge Framework** is designed to **streamline documentation management*
 - Commercial software
 - Or any project requiring comprehensive documentation
 
-Converge simplifies the process and allows you to focus on **writing actual content** in minutes, rather than spending time designing or building a documentation website from scratch.  
+Converge simplifies the process and allows you to focus on **writing actual content** in minutes, rather than spending time designing or building a documentation website from scratch.
 the [converge](https://convergephp.com) docs are managed by converge
 With Converge, you can:
 
@@ -19,7 +19,7 @@ By focusing on content creation rather than infrastructure, Converge empowers de
 
 ### Multi-Module Support
 
-Converge lets you write fully separate, styled logic documentation for multiple packages or software projects within the same Laravel application. This is achieved using the [module](/modules) system, allowing you to:
+Converge lets you write fully separate, styled logic documentation for multiple packages or software projects within the same Laravel application. This is achieved using the [module](/docs/modules/module-provider)system, allowing you to:
 
 - Create distinct modules for different projects.
 - Maintain a unified system while keeping each project isolated.
@@ -29,7 +29,7 @@ Converge lets you write fully separate, styled logic documentation for multiple 
 
 Do you have multiple versions of your package or software?
 
-Converge is built with versioning in mind. You can maintain multiple versions of your documentation, with each version having its own dedicated content. Converge handles the complexity for you with simple configurations in the [module provider](/modules/module-provider).
+Converge is built with versioning in mind. You can maintain multiple versions of your documentation, with each version having its own dedicated content. Converge handles the complexity for you with simple configurations in the [module provider](/docs/modules/module-provider).
 
 ### Blade Component Support
 
@@ -75,4 +75,4 @@ With Converge, you’re not just documenting — you’re building a powerful, s
 
 The **Converge Framework** was founded by:
 - [Charrafi Mohamed](https://github.com/CharrafiMed).
-- [Ayoub El Hajji](https://github.com/Ayoubhj866) 
+- [Ayoub El Hajji](https://github.com/Ayoubhj866)
