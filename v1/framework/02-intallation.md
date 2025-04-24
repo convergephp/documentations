@@ -4,7 +4,7 @@ Learn how to install Converge on your laravel application.
 
 ### Prerequisites
 
-Converge v1.x is written in PHP, JavaScript, and leverages several Laravel components. It is shipped as a Laravel package and requires the following:
+Converge  is written in PHP, JavaScript, and leverages several Laravel components. It is shipped as a Laravel package and requires the following:
 
 - PHP 8.3+
 - Laravel 11+
