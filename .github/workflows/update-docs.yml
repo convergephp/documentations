@@ -35,3 +35,6 @@ jobs:
               echo "Re-indexing docs search..."
               cd ../current
               php artisan converge:index-search
+
+              echo "Reloading php fpm..."
+              sudo service php8.3-fpm reload
