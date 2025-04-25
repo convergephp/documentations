@@ -1,0 +1,26 @@
+name: update docs on server
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  update-docs:
+    name: Updating The Docs
+    if: github.event.pull_request.merged == true || github.event_name == 'push'
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Setup SSH
+        uses: appleboy/ssh-action@v1.2.2
+
+        with:
+            host: ${{ secrets.SSH_CONNECTION_HOST }}
+            username: ${{ secrets.SSH_CONNECTION_USERNAME }}
+            ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+            script: "cd docs; git pull origin master"
