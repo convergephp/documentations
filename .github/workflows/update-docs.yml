@@ -22,5 +22,5 @@ jobs:
         with:
             host: 89.117.36.52
             username: converge
-            ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+            key: ${{ secrets.SSH_PRIVATE_KEY }}
             script: "cd docs; git pull origin master"
