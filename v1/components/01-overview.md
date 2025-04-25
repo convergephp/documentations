@@ -1,7 +1,7 @@
 ---
 title: Blade Components overview
 ---
-**Blade Components for Converge Documentation Generator**
+**Blade Components for Converge Framework**
 
 Converge is a powerful documentation generator that helps you create high-quality documentation for your projects. To make it even more
 effective, we've designed a set of Blade components specifically for use with Converge. These components are tailored to provide a
