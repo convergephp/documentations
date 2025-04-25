@@ -6,7 +6,7 @@ title: Basic Usage
 
 Once you have installed Converge Components, you can begin using them in your documentation. This guide will show you how to use the core components for creating professional documentation.
 
-## Adding Components to Markdown Files
+## Using Components in Markdown Files
 
 Converge Components can be used directly within your markdown files using the `@blade` directive. This allows you to combine the simplicity of markdown with the power of Blade components.
 
