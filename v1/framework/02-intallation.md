@@ -28,7 +28,7 @@ composer require converge/converge
 <x-converge::steps.step 
         number="2" 
         title="Generate new module provider" 
-        description="To start building documentation for your package or software, you need to create a **Module Provider** that will handle the configuration."
+        description="To start building documentation for your package or software, you need to create a **Module Provider** that will handle the configurationConverge includes a dedicated command to scaffold this for you."
     >
 <x-converge::container.code>
 ```bash
@@ -46,11 +46,11 @@ php artisan converge:make-module DocsModuleProvider
 <x-converge::steps.step 
         number="3" 
         title="publish the starterkit" 
-        description="this will show the file structure and naming convention of docs to get up and running to starts documentating right away "
+        description="This publishes a starter documentation structure with file conventions to help you get started quickly."
     >
 <x-converge::container.code>
-```shell
-www.example.test/docs
+```php
+php artisan vendor:publish --tag="converge-starterkit"
 ```
 </x-converge::container.code>
 </x-converge::steps.step>
@@ -58,48 +58,42 @@ www.example.test/docs
 <x-converge::steps.step 
         number="4" 
         title="Visite your navigator" 
-        description="Go to navigator and visite the magic"
+        description="Open your browser and navigate to the route you configured to view your documentation (/docs)"
     >
 <x-converge::container.code>
 ```shell
 www.example.test/docs
 ```
 </x-converge::container.code>
+
 </x-converge::steps.step>
 
 <!-- STEP 5 -->
-<x-converge::steps.step title="Keep coding" end color="primary" last>
-</x-converge::steps.step>
+<x-converge::steps.step title="Keep coding" end color="primary" last/>
+
 </x-converge::steps.vertical>
 @endblade
 
-
-
-
-
-Converge comes with a pre-built command to generate the Module Provider:
-
+### Configure things from the command
+during module generation you can specify the path where your documentations resides by using the ``--path`` flag, you can use Laravel path helpers like ``base_path():``
+@blade
+<x-converge::container.code>
 ```shell
-php artisan converge:make-module ConvergeDocs
+php artisan converge:make-module ConvergeDocs --path=../../../docs
 ```
+</x-converge::container.code>
+@endblade
 
-you can specify the path where your documentations resides by using the ``--path`` flag:
-
-```shell
-    php artisan converge:make-module ConvergeDocs --path=../../../docs
-```
-
-Alternatively, you can use Laravel path helpers like ``base_path():``
-
-```shell
-    php artisan converge:make-module ConvergeDocs --path="base_path('docs')"
-```
 
 to configure the route where the documentation will be accessed, use the ``--route`` flag:
 
+@blade
+<x-converge::container.code>
 ```shell
-    php artisan converge:make-module ConvergeDocs --path="base_path('docs')" --route="/docs"
+php artisan converge:make-module ConvergeDocs --path="base_path('docs')" --route="/docs"
 ```
+</x-converge::container.code>
+@endblade
 
 At this point, if you have valid markdown files under the folder you specified in the ``--path`` flag (e.g., ``base_path('docs')``), you can test the endpoint you defined in the ``--route`` flag (e.g., ``/docs``, ``localhost:8000/docs``, ``convergephp.test/docs``).
 
