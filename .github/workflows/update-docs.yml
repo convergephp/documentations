@@ -24,4 +24,4 @@ jobs:
             username: converge
             key: ${{ secrets.SSH_PRIVATE_KEY }}
             passphrase: ${{ secrets.SSH_PASSPHRASE }}
-            script: "cd docs; git pull origin master"
+            script: "cd www/docs; git pull origin master"
