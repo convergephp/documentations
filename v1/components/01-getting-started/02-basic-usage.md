@@ -15,7 +15,8 @@ Converge Components can be used directly within your markdown files using the `@
 A typical documentation page using Converge Components looks like:
 
 
-```php
+
+```markdown
 ---
 title: API Authentication
 ---
@@ -24,13 +25,12 @@ title: API Authentication
 
 Regular markdown content here...
 
-@blade
+
+{+@blade
 <x-converge::alert title="Alert title">
     <!-- Component content here -->
 </x-converge::alert>
-@endblade
+@endblade+}
 
 More markdown content...
 ```
-
-Now that you understand the basics of using Converge Components, explore the [Component Reference](./component-reference.md) for a complete list of available components and their options.
