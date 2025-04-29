@@ -144,6 +144,7 @@ class ConvergeDocsModuleProvider extends ModuleProvider
 </x-converge::code.frame>
 @endblade
 is very minimal and act as starting yet but already production ready configurations 
+
 ### Further Configuration
 
 For additional configuration options, refer to the [Module Provider](modules/module-provider) documentation.
