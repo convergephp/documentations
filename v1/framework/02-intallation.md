@@ -76,28 +76,39 @@ www.example.test/docs
 
 ### Configure things from the command
 during module generation you can specify the path where your documentations resides by using the ``--path`` flag, you can use Laravel path helpers like ``base_path():``
-@blade
 <x-converge::container.code>
 ```shell
 php artisan converge:make-module ConvergeDocs --path=../../../docs
 ```
 </x-converge::container.code>
-@endblade
 
 
 to configure the route where the documentation will be accessed, use the ``--route`` flag:
 
-@blade
 <x-converge::container.code>
 ```shell
 php artisan converge:make-module ConvergeDocs --path="base_path('docs')" --route="/docs"
 ```
 </x-converge::container.code>
-@endblade
 
 At this point, if you have valid markdown files under the folder you specified in the ``--path`` flag (e.g., ``base_path('docs')``), you can test the endpoint you defined in the ``--route`` flag (e.g., ``/docs``, ``localhost:8000/docs``, ``convergephp.test/docs``).
 
-actually this will generate a `ConvergeDocsModuleProvider` module provider and adding it to your service providers in `bootstrap\providers.php`, all of your module providers will be localted under `App\Providers\Converge`, in our case the fresh generated module provider  
+actually this will generate a `ConvergeDocsModuleProvider` module provider and adding it to your service providers in `bootstrap\providers.php`, all of your module providers will be localted under `App\Providers\Converge`, in our case the fresh generated module provider
+
+@blade
+<x-converge::code.frame filename="app.js" language="php" :expandable="false">
+```php
+namespace Converge\Test;
+class Convegre {
+    public function __construct()
+    {
+        // TODO
+    }
+}
+```
+</x-converge::code.frame>
+@endblade
+
 ### Further Configuration
 
 For additional configuration options, refer to the [Module Provider](modules/module-provider) documentation.
