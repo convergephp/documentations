@@ -59,7 +59,7 @@ Converge Components are pure Laravel blade components enhanced with the Converge
 
 <x-converge::container.code>
 ```bash
-composer require converge/converge-components
+composer require convergephp/blade-components
 ```
 </x-converge::container.code>
 </x-converge::steps.step>
@@ -87,7 +87,7 @@ Running `composer update` at the root of your project will pull in the latest ve
 
 <x-converge::container.code>
 ```bash
-composer update converge/converge-components
+composer update convergephp/blade-components
 ```
 </x-converge::container.code>
 
