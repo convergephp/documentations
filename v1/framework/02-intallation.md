@@ -97,6 +97,7 @@ php artisan converge:make-module ConvergeDocs --path="base_path('docs')" --route
 
 At this point, if you have valid markdown files under the folder you specified in the ``--path`` flag (e.g., ``base_path('docs')``), you can test the endpoint you defined in the ``--route`` flag (e.g., ``/docs``, ``localhost:8000/docs``, ``convergephp.test/docs``).
 
+actually this will generate a `ConvergeDocsModuleProvider` module provider and adding it to your service providers in `bootstrap\providers.php`, all of your module providers will be localted under `App\Providers\Converge`, in our case the fresh generated module provider  
 ### Further Configuration
 
 For additional configuration options, refer to the [Module Provider](modules/module-provider) documentation.

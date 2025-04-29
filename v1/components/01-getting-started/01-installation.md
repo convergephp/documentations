@@ -8,6 +8,7 @@ Converge Components is a collection of specialized Blade components designed spe
 
 ## Requirements
 
+
 Converge Components are pure Laravel blade components enhanced with the Converge theming system. The package has the following dependencies:
 
 - PHP >= 8.3
@@ -84,29 +85,25 @@ php artisan vendor:publish --tag=converge-components-assets
 
 Running `composer update` at the root of your project will pull in the latest version of Converge Components.
 
-@blade
 <x-converge::container.code>
 ```bash
 composer update converge/converge-components
 ```
 </x-converge::container.code>
-@endblade
 
-@blade
+
 <x-converge::alert type="warning" title="Always publish assets when you update to a new version of Converge Components"/>
-@endblade
 
 To automate publishing of the Converge Components files every time you run `composer update`, you can add the following lines to your `composer.json` file under the `scripts` key.
 
-@blade
+<!-- @blade -->
 <x-converge::container.code>
 ```json
 "scripts": {
 "post-update-cmd": [
     {~ "@php artisan vendor:publish --tag=another-published-assest --force",~}
-    "@php artisan vendor:publish --tag=converge-components-assets --force"
+    "@php artisan vendor:publish --tag=converge-components-assets --force",
     {~"@php artisan vendor:publish --tag=any-other-assets --force",~}
 ],
 ```
 </x-converge::container.code>
-@endblade
