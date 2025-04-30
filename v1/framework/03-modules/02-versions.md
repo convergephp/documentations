@@ -71,22 +71,19 @@ public function module(Module $module): Module
             ->latestVersionUrl('v4.x') // optional
             // ..
             ->defineVersions(function (Versions $versions) {
-                
                 $versions->add(
                     fn(Version $version) => $version
                         ->label('V3.0.0')
                         ->route('v3.x')
                         ->in(base_path('docs/V3'))
                 );
-
                 $versions->add(
                     fn(Version $version): Version => $version
                         ->label('v2.0.0')
                         ->route('v2.x') 
-                        ->asAbsolute()
+                        ->asAbsolute() // optional
                         ->in(base_path('docs/v2'))
                 );
-                
                 $versions->addLink(
                     fn(VersionLink $version) => $version
                         ->label('V0.0.0')
