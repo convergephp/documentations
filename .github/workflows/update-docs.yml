@@ -38,3 +38,11 @@ jobs:
 
               echo "Reloading php fpm..."
               sudo service php8.3-fpm reload
+
+              echo "clearing the cache..."
+              php artisan cache:clear
+
+              echo "re-invoking the cache..."
+              php artisan config:cache
+
+              php artisan route:cache
