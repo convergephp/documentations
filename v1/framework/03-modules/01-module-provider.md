@@ -126,7 +126,7 @@ class ConvergeDocsModuleProvider extends ModuleProvider
 - `->in(base_path('docs'))`: Filesystem path to your documentation.  
 <x-converge::alert 
     type="warning"
-    title="If your docs folder is a symlink, wrap it in realpath() to resolve correctly. `realpath()` function, `(eg: realpath(base_path('docs')))`"
+    title="If your docs folder is a symlink, wrap it in realpath() to resolve correctly. `(eg: realpath(base_path('docs')))`"
 />
 - `->brandLogo('converge')` (optional): Optional branding logo see [branding section](/themes/branding) for more.
 - `->theme(fn(Converge\Theme\Theme $theme) => ...)`: Configure colors, spotlight behavior, and visual identity see [themes docs](../customization/themes) for more.
