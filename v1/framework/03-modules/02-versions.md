@@ -52,9 +52,9 @@ public function module(Module $module): Module
 >The examples above focus on customizing the default version — which is automatically inferred for basic or newly registered modules.
 
 ### Adding More Versions
-before adding new versions instance you need the default version a [label placeholder](#content-defining-a-version-label)
+Before you can define additional versions, you must first assign a version label to the default version. see [label placeholder](#content-defining-a-version-label)
 
-to effectively add new more version you need to invoke the `defineVersions()` method:
+To declare multiple versions, use the `defineVersions()` method:
 
 <x-converge::container.code>
 ```php
@@ -64,7 +64,7 @@ public function module(Module $module): Module
 {
     return $module
             // ...
-            ->versionAs('v4.0.0-beta.2') // the label is must when giving the label
+            ->versionAs('v4.0.0-beta.2') // required
             ->quietedVersionUrl('v4.x') // optional
             // or
             ->latestVersionLabel('v4.0.0-beta.2')
@@ -97,6 +97,35 @@ public function module(Module $module): Module
 ```
 </x-converge::container.code>
 
-the closure inside `->defineVersions()` is used to setup the versions system 
-- you can add local versions that will consumed by the treated module  by using `->add()` 
-- pointing to legacy documentation versions or any external links by using `->addLink()` 
+Inside the ``defineVersions()`` callback, you have access to two core methods:
+
+#### local versions
+
+- `->add()` : Registers a local version stored and rendered by Converge.
+this function accept a closure as well and you need to setup the three buidling blocks needed by each version *label*,*route*,*contents*: 
+<x-converge::container.code>
+```php
+$versions->add(
+    fn(Version $version): Version => $version
+        ->label('v2.0.0') // the label of the version (used in the dropdown)
+        ->route('v2.x')  // Used in URL: /docs/v2.x
+        ->in(base_path('docs/v2')) // Path to the content
+    );
+```
+</x-converge::container.code>
+
+the route given to each version is going to be suffixed friendly to the routepath given in the module eg: `docs/v2.x`, unless you invoke the `->asAbsolute()` method, so the version will accessed on `/v2.x`:  
+<x-converge::container.code>
+```php
+$versions->add(
+    fn(Version $version): Version => $version
+         // previous 3 methods...
+         {+->asAbsolute()+}
+    );
+```
+</x-converge::container.code>
+> each versions may have it's own clusters you may refer to [clusters docs](clusters) 
+
+#### external versions
+
+you may using converge to documente only latest versions of your software, and older versions may still in external places, converge also handle that easily for you, so to add an legacy, or external links version you may need to use `->addLink()`
