@@ -105,5 +105,6 @@ To automate publishing of the Converge Components files every time you run `comp
     "@php artisan vendor:publish --tag=converge-components-assets --force",
     {~"@php artisan vendor:publish --tag=any-other-assets --force",~}
 ],
+}
 ```
 </x-converge::container.code>
