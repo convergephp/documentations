@@ -22,8 +22,6 @@ You can make the default cluster visible in the sidebar by simply assigning to i
 
 Let’s see how easy it is to define clusters in Converge:
 
-<x-converge::container.code>
-
 ```php
 use Converge\Module;
 
@@ -56,15 +54,15 @@ public function module(Module $module): Module
 }
 ```
 
-</x-converge::container.code>
-
 #### Why default Clusters setup needed ?
 
 Whenever you need to add a cluster for a specific version, you must set up a default cluster by marking it with  `->default()`, A default cluster behaves like a regular cluster but, by default, uses the path provided to the version itself to serve its contents.
 
-<x-converge::alert title="in fresh module it will use the path provided to the `in()` to serve contents "/>
-
-<x-converge::container.code>
+@blade
+<x-converge::alert>
+in fresh module it will use the path provided to the `in()` to serve contents
+</x-converge::alert>
+@endblade
 
 ```php
  $clusters->add(
@@ -73,16 +71,12 @@ Whenever you need to add a cluster for a specific version, you must set up a def
     )->default();
 ```
 
-</x-converge::container.code>
-
 #### Adding More clusters
 
 After setting up your default cluster and assigning it a label, it's time to add more clusters. Each cluster consists of three essential building blocks:
 -  _URL_
 -  _Label_
 - _Path Contents_
-
-<x-converge::container.code>
 
 ```php
    $clusters->add(
@@ -93,11 +87,7 @@ After setting up your default cluster and assigning it a label, it's time to add
     );
 ```
 
-</x-converge::container.code>
-
-
 You can also change the icon of the cluster using the `icon()` method ([see how to add icons in converge](../04-customization/icons)):
-<x-converge::container.code>
 
 ```php
    $clusters->add(
@@ -106,11 +96,8 @@ You can also change the icon of the cluster using the `icon()` method ([see how 
             {+->icon(fn() => svg('iconsax-bul-3dcube', 'h-5 w-5'))+}
     );
 ```
-</x-converge::container.code>
 
 Additionally, you can change the order of the cluster by using the ``->sort()`` method, which accepts either an `int` or a `Closure`:
-
-<x-converge::container.code>
 
 ```php
    $clusters->add(
@@ -119,16 +106,13 @@ Additionally, you can change the order of the cluster by using the ``->sort()`` 
             {+->sort(0)+}
     );
 ```
-</x-converge::container.code>
 
 ### Tunning Cluser Url
 
 By default, the default cluster of each version (including the quieted version) will be accessed using the URL defined for that version. Additional clusters will append to the URL specified in the ``route()`` method, e.g., ``docs/components``, ``docs/v3.x/guide``, etc. However, Converge allows you to define how the cluster's URL will be relative to the root URL.
 
-#### Absolute Url 
+#### Absolute Url
 - to make you cluster's URL absolute to root (`/`) URL you may use `absoluteUrl()` method:
-
-<x-converge::container.code>
 
 ```php
    $clusters->add(
@@ -137,16 +121,17 @@ By default, the default cluster of each version (including the quieted version) 
             {+->absoluteUrl()+} // Make the URL absolute to /
     );
 ```
-</x-converge::container.code>
 With this, the URL given to the `route()` eg: `route('guide')` method will be accessible in an absolute manner, like `/guide` ...
 
-<x-converge::alert title="this configurations works for explicit defained versions"/>
+@blade
+<x-converge::alert>
+this configurations works for explicit defained versions
+</x-converge::alert>
+@endblade
 
 #### Absolute Url With Module Url
 
 - To make your cluster URL relative to your module URL (and escape the version URL)  for example eg: `docs/v4.x/guide` to `/docs/quide`, use the `absoluteUrlWithModuleUrl()`:
-
-<x-converge::container.code>
 
 ```php
    $clusters->add(
@@ -155,13 +140,10 @@ With this, the URL given to the `route()` eg: `route('guide')` method will be ac
             {+->absoluteUrlWithModuleUrl()+} // Escape version and make the URL relative to the module
     );
 ```
-</x-converge::container.code>
 
 #### Absolute Url With Module Url
 
 - To make your cluster URL absolute to your module URL, including the version, use the  `absoluteUrlWithModuleUrl()` method . For example, from ``docs/v4.x/guide`` to ``/V4.x/guide``:
-
-<x-converge::container.code>
 
 ```php
    $clusters->add(
@@ -170,4 +152,3 @@ With this, the URL given to the `route()` eg: `route('guide')` method will be ac
             {+->absoluteUrlWithVersionUrl()+}
     );
 ```
-</x-converge::container.code>

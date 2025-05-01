@@ -12,59 +12,67 @@ Converge  is written in PHP, JavaScript, and leverages several Laravel component
 
 @blade
 <x-converge::steps.vertical>
+
 <!-- STEP 1 -->
-<x-converge::steps.step 
-        number="1" 
-        title="Installation" 
-        description="First you shoud install converge using composer"
-    >
-<x-converge::container.code>
+<x-converge::steps.step
+        number="1"
+        title="Installation">
+
+<x-slot:description>
+First you shoud install converge using composer
 ```php
 composer require convergephp/converge
 ```
-</x-converge::container.code>
+</x-slot:description>
+
 </x-converge::steps.step>
 
-<x-converge::steps.step 
-        number="2" 
-        title="Generate new module provider" 
-        description="To start building documentation for your package or software, you need to create a **Module Provider** that will handle the configurationConverge includes a dedicated command to scaffold this for you."
-    >
-<x-converge::container.code>
+<!-- STEP 2 -->
+<x-converge::steps.step
+        number="2"
+        title="Generate new module provider">
+
+<x-slot:description>
+To start building documentation for your package or software, you need to create a **Module Provider** that will handle the configurationConverge includes a dedicated command to scaffold this for you.
 ```bash
 php artisan converge:make-module DocsModuleProvider
 ```
-</x-converge::container.code>
+</x-slot:description>
 
-<x-converge::alert 
-    title="you can omit ModuleProvider suffix"
-/>
+<x-converge::alert>
+you can omit ModuleProvider suffix
+</x-converge::alert>
 
 </x-converge::steps.step>
 
+
 <!-- STEP 3 -->
-<x-converge::steps.step 
-        number="3" 
-        title="publish the starterkit" 
-        description="This publishes a starter documentation structure with file conventions to help you get started quickly."
-    >
-<x-converge::container.code>
+<x-converge::steps.step
+        number="3"
+        title="publish the starterkit">
+
+<x-slot:description>
+**This publishes a starter documentation structure with file conventions to help you get started quickly.**
+
 ```php
 php artisan vendor:publish --tag="converge-starterkit"
 ```
-</x-converge::container.code>
+</x-slot:description>
+
 </x-converge::steps.step>
+
+
 <!-- STEP 4 -->
-<x-converge::steps.step 
-        number="4" 
-        title="Visite your navigator" 
-        description="Open your browser and navigate to the route you configured to view your documentation (/docs)"
-    >
-<x-converge::container.code>
+<x-converge::steps.step
+        number="4"
+        title="Visite your navigator">
+
+<x-slot:description>
+**Open your browser and navigate to the route you configured to view your documentation (/docs).**
 ```shell
 www.example.test/docs
 ```
-</x-converge::container.code>
+</x-slot:description>
 
 </x-converge::steps.step>
 
@@ -80,7 +88,4 @@ www.example.test/docs
 ### Further Configuration
 
 
-
-
 For additional configuration options, refer to the [Module Provider](modules/module-provider) documentation.
-
