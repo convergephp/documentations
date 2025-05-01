@@ -32,10 +32,10 @@ public function module(Module $module): Module
     return $module
             // ...
              ->defineClusters(function (Clusters $clusters) {
-                // Required: Define the default cluster first
+                // Required: complete the setup of default cluster first
                 $clusters->add(
                     fn(Cluster $cluster) => $cluster
-                        ->label('Documentation')  // This label makes it visible in the sidebar
+                        ->label('Documentation')  // This Displayed in sidebar
                 )->default(); // Uses routePath() and in() defined in module() level as configurations.
 
                  // Add an additional cluster
@@ -43,8 +43,9 @@ public function module(Module $module): Module
                     fn(Cluster $cluster) => $cluster
                         ->route('components') // Maps to docs/components/*
                         ->label('Components') //  Displayed in the sidebar
-                        ->in(realpath(base_path('docs/v1/components')))
+                        ->in(realpath(base_path('docs/components')))
                 );
+
                 // Add a link-type cluster
                 $clusters->addLink(
                     fn(ClusterLink $cluster) => $cluster
@@ -59,7 +60,7 @@ public function module(Module $module): Module
 
 #### Why default Clusters setup needed ?
 
-every time you need to add a cluster for a specific version you need to setup the default cluster by marking it with `->default()`, it's a regular cluster but as default it will use the `path` provided to the version itself to serve contents
+Whenever you need to add a cluster for a specific version, you must set up a default cluster by marking it with  `->default()`, A default cluster behaves like a regular cluster but, by default, uses the path provided to the version itself to serve its contents.
 
 <x-converge::alert title="in fresh module it will use the path provided to the `in()` to serve contents "/>
 
@@ -76,17 +77,95 @@ every time you need to add a cluster for a specific version you need to setup th
 
 #### Adding More clusters
 
-after you setup you default cluster, and giving it a label now it's time for you add more clusters, each cluster had 3 essentiel building blocks: _URL_, _Label_,_Path Contents_.
+After setting up your default cluster and assigning it a label, it's time to add more clusters. Each cluster consists of three essential building blocks:
+-  _URL_
+-  _Label_
+- _Path Contents_
 
 <x-converge::container.code>
 
 ```php
    $clusters->add(
         fn(Cluster $cluster) => $cluster
-            ->route('components')
-            ->label('Components')
-            ->in(base_path('docs/v1/components'))
+            ->route('components') // Defines the cluster route (docs/components)
+            ->label('Components') // The label used in the sidebar
+            ->in(base_path('docs/components'))  // Path to the contents
     );
 ```
 
+</x-converge::container.code>
+
+
+you may need to changes the icon ([see how to add icons in converge](../04-customization/icons)) of that cluster using `icon()` method:
+<x-converge::container.code>
+
+```php
+   $clusters->add(
+        fn(Cluster $cluster) => $cluster
+            // ...
+            {+->icon(fn() => svg('iconsax-bul-3dcube', 'h-5 w-5'))+}
+    );
+```
+</x-converge::container.code>
+
+you may need to changes the order of the cluster by using `->sort()` method as accept any `int/Closure`:
+
+<x-converge::container.code>
+
+```php
+   $clusters->add(
+        fn(Cluster $cluster) => $cluster
+            //  ...
+            {+->sort(0)+}
+    );
+```
+</x-converge::container.code>
+
+### Tunning Cluser Url
+by default the default cluster of each version (including the quieted version) will be accessed in the URL defined for that version, and for additional clusters they will suffix the URL defined on the `route()` method eg: `docs/components`, `docs/v3.x/guide`..., you how ever converge let's you define how your cluster's URL will relative to:
+
+<x-converge::alert title="this configurations works for explicit defained versions"/>
+#### Absolute Url 
+- to make you cluster URL absolute to `/` URL you may use `absoluteUrl()` method:
+
+<x-converge::container.code>
+
+```php
+   $clusters->add(
+        fn(Cluster $cluster) => $cluster
+            //  ...
+            {+->absoluteUrl()+}
+    );
+```
+</x-converge::container.code>
+so now the URL given to the `route()` eg: `route('guide')` method will accessible in absolute manner`/guide` ...
+
+#### Absolute Url With Module Url
+
+- to make you cluster Url relative to your module Url (escape the version Url) eg: `docs/v4.x/guide` to `/docs/quide` Url you may use `absoluteUrlWithModuleUrl()` method:
+
+<x-converge::container.code>
+
+```php
+   $clusters->add(
+        fn(Cluster $cluster) => $cluster
+            //  ...
+            {+->absoluteUrlWithModuleUrl()+}
+    );
+```
+</x-converge::container.code>
+
+#### Absolute Url With Module Url
+
+- to make you cluster URL absolute to your module Url (escape the version Url) eg: `docs/v4.x/guide` to `/V4.x/quide` Url you may use `absoluteUrlWithModuleUrl()` method:
+
+<x-converge::container.code>
+
+```php
+   $clusters->add(
+        fn(Cluster $cluster) => $cluster
+            //  ...
+            {+->absoluteUrlWithVersionUrl()+}
+    );
+```
 </x-converge::container.code>
