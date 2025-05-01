@@ -96,7 +96,7 @@ After setting up your default cluster and assigning it a label, it's time to add
 </x-converge::container.code>
 
 
-you may need to changes the icon ([see how to add icons in converge](../04-customization/icons)) of that cluster using `icon()` method:
+You can also change the icon of the cluster using the `icon()` method ([see how to add icons in converge](../04-customization/icons)):
 <x-converge::container.code>
 
 ```php
@@ -108,7 +108,7 @@ you may need to changes the icon ([see how to add icons in converge](../04-custo
 ```
 </x-converge::container.code>
 
-you may need to changes the order of the cluster by using `->sort()` method as accept any `int/Closure`:
+Additionally, you can change the order of the cluster by using the ``->sort()`` method, which accepts either an `int` or a `Closure`:
 
 <x-converge::container.code>
 
@@ -122,11 +122,29 @@ you may need to changes the order of the cluster by using `->sort()` method as a
 </x-converge::container.code>
 
 ### Tunning Cluser Url
-by default the default cluster of each version (including the quieted version) will be accessed in the URL defined for that version, and for additional clusters they will suffix the URL defined on the `route()` method eg: `docs/components`, `docs/v3.x/guide`..., you how ever converge let's you define how your cluster's URL will relative to:
+
+By default, the default cluster of each version (including the quieted version) will be accessed using the URL defined for that version. Additional clusters will append to the URL specified in the ``route()`` method, e.g., ``docs/components``, ``docs/v3.x/guide``, etc. However, Converge allows you to define how the cluster's URL will be relative to the root URL.
+
+#### Absolute Url 
+- to make you cluster's URL absolute to root (`/`) URL you may use `absoluteUrl()` method:
+
+<x-converge::container.code>
+
+```php
+   $clusters->add(
+        fn(Cluster $cluster) => $cluster
+            //  ...
+            {+->absoluteUrl()+} // Make the URL absolute to /
+    );
+```
+</x-converge::container.code>
+With this, the URL given to the `route()` eg: `route('guide')` method will be accessible in an absolute manner, like `/guide` ...
 
 <x-converge::alert title="this configurations works for explicit defained versions"/>
-#### Absolute Url 
-- to make you cluster URL absolute to `/` URL you may use `absoluteUrl()` method:
+
+#### Absolute Url With Module Url
+
+- To make your cluster URL relative to your module URL (and escape the version URL)  for example eg: `docs/v4.x/guide` to `/docs/quide`, use the `absoluteUrlWithModuleUrl()`:
 
 <x-converge::container.code>
 
@@ -134,30 +152,14 @@ by default the default cluster of each version (including the quieted version) w
    $clusters->add(
         fn(Cluster $cluster) => $cluster
             //  ...
-            {+->absoluteUrl()+}
-    );
-```
-</x-converge::container.code>
-so now the URL given to the `route()` eg: `route('guide')` method will accessible in absolute manner`/guide` ...
-
-#### Absolute Url With Module Url
-
-- to make you cluster Url relative to your module Url (escape the version Url) eg: `docs/v4.x/guide` to `/docs/quide` Url you may use `absoluteUrlWithModuleUrl()` method:
-
-<x-converge::container.code>
-
-```php
-   $clusters->add(
-        fn(Cluster $cluster) => $cluster
-            //  ...
-            {+->absoluteUrlWithModuleUrl()+}
+            {+->absoluteUrlWithModuleUrl()+} // Escape version and make the URL relative to the module
     );
 ```
 </x-converge::container.code>
 
 #### Absolute Url With Module Url
 
-- to make you cluster URL absolute to your module Url (escape the version Url) eg: `docs/v4.x/guide` to `/V4.x/quide` Url you may use `absoluteUrlWithModuleUrl()` method:
+- To make your cluster URL absolute to your module URL, including the version, use the  `absoluteUrlWithModuleUrl()` method . For example, from ``docs/v4.x/guide`` to ``/V4.x/guide``:
 
 <x-converge::container.code>
 
