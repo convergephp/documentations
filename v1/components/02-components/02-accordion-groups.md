@@ -32,12 +32,12 @@ here is the code of this example
      Content for first accordion item.
   </x-converge::accordion.item>
 
-   // item 2
+  // item 2
   <x-converge::accordion.item title="Second Item" index="1">
     *Content for second accordion item.*
   </x-converge::accordion.item>
 
-   // item 3
+  // item 3
   <x-converge::accordion.item title="Third Item" index="2">
      **Content for third accordion item.**
   </x-converge::accordion.item>
