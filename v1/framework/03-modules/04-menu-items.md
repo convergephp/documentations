@@ -62,8 +62,8 @@ $menuItems->add(
     );
 ```
 
-#### Menu Item Icon Position
-to open url in new tab:
+#### Open URL in New Tab
+To make a menu item open in a new tab:
 
 ```php
 use Converge\Enums\IconPosition;
@@ -75,7 +75,7 @@ $menuItems->add(
 ```
 
 #### additinal Menu Item styles 
-to add raw styles to that menu item:
+To apply raw inline styles to a menu item:
 
 ```php
 use Converge\Enums\IconPosition;
@@ -92,7 +92,7 @@ $menuItems->add(
 ```
 
 #### additinal Menu Item Classes 
-while you have a very liimited access to sepcific classes since tailwind get purged in the build process, but you can pass you assets class then use them:
+Although Tailwind classes are purged during the build process, you can use the following pre-defined utility classes in your links, or injecting other css links using view interceptors:
 
 ```php
 use Converge\Enums\IconPosition;
@@ -114,7 +114,7 @@ You can use the following **button utility classes** for menu items or actions:
 These classes follow the [DaisyUI](https://daisyui.com/components/button/) naming convention and inherit your current theme's design system.
 
 #### Menu Item Sort 
-to change the order of a menu item:
+To define the sort order of a menu item:
 
 ```php
 use Converge\Enums\IconPosition;
@@ -128,21 +128,56 @@ $menuItems->add(
 
 ### Adding Menu Items Groups
 
-you can create a dropdown of menu items by using menu item group feature in converge:
-
+You can create a dropdown of menu items using the **MenuItemGroup** feature:
 ```php
- $menuItems->add(
+use Converge\MenuItems\MenuItemGroup;
+$menuItems->add(
     function (MenuItemGroup $group): void {
-        // setup the group look
-        $group->label('social links');
+        // Setup the group button
+        $group->label('Social Links');
 
-        // then start pushing to it menu items 
+        // Push items into the group
         $group->push(
-            // regular menu item 
+            fn(MenuItem $item): MenuItem => $item
+                ->label('Components')
+                ->url('components')
+                // Plus anything applicable to a solo menu item
         );
+
         $group->push(
-            // an other regular menu item 
+            // Another regular menu item
         );
     }
 );
 ```
+<x-converge::alert>
+you must hint `Converge\MenuItems\MenuItemGroup` for menu groups to work properly 
+</x-converge::alert>
+
+
+This allows you to group related links under a common label with full support for icons, styles, sorting, and more.
+
+since everything about single menu item links are documented above now let's focus on tweacking the dropdown button looks.
+
+<x-converge::alert>
+the only required configuration for menu item group is the **label** using `$group->label('social links')`
+</x-converge::alert>
+ 
+#### Open and Close Icons
+
+you can changes the icon when the dropdown is open or close:  
+```php
+use Converge\MenuItems\MenuItemGroup;
+$menuItems->add(
+    function (MenuItemGroup $group): void {
+        $group->label('Social Links')
+              ->openIcon(fn() => svg('heroicon-c-arrow-top-right-on-square'))
+              ->closeIcon(fn() => svg('heroicon-m-rocket-launch'))
+              ->iconPosition(IconPosition::After); // or Before
+              // changes the sort order    
+              ->sort(4)
+        // ... 
+    }
+);
+```
+
