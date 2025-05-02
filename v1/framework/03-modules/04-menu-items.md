@@ -128,4 +128,21 @@ $menuItems->add(
 
 ### Adding Menu Items Groups
 
-you can create a dropdown of menu items by using menu item group feature in converge 
+you can create a dropdown of menu items by using menu item group feature in converge:
+
+```php
+ $menuItems->add(
+    function (MenuItemGroup $group): void {
+        // setup the group look
+        $group->label('social links');
+
+        // then start pushing to it menu items 
+        $group->push(
+            // regular menu item 
+        );
+        $group->push(
+            // an other regular menu item 
+        );
+    }
+);
+```
