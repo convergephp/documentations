@@ -8,22 +8,22 @@ Converge is a lightweight framework designed to manage documentation and shipped
 ## Built In Docs
 If your documentation is part of a Laravel application, there is no need for additional setup when deploying Converge. Converge integrates seamlessly with your app and will serve the documentation directly from the defined file paths. However, whenever you update the documentation structure (e.g., adding/removing files) or modify the content itself (e.g., editing a Markdown file), you need to ensure that the search index is rebuilt, and the cache is cleared to reflect the changes.
 
-<x-converge::alert title="This use case is ideal for simpler documentation scenarios, such as API documentation or catalog-based docs, where content and structure don't change frequently."/>
+<x-converge::alert>
+This use case is ideal for simpler documentation scenarios, such as API documentation or catalog-based docs, where content and structure don't change frequently.
+</x-converge::alert>
 
 **rebuild the search index for new changes to take effect:**
 
-<x-converge::container.code>
 ```bash
 php artisan converge:index-search
 ```
-</x-converge::container.code>
+
 
 **clear the cache to destroy the files tree cache**
-<x-converge::container.code>
 ```bash
 php artisan converge:index-search
 ```
-</x-converge::container.code>
+
 
 ## When Docs in sperate docs
 In many real-world use cases, larger frameworks or packages maintain separate repositories specifically for their documentation. 
@@ -35,7 +35,9 @@ This is typically done to have more granular control over the content, especiall
 
 you may make the docs available in your laravel app by leveraging [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) feature in git so you will have repository of your docs inside the repositories of your actuall app without any history dependecy and already it's a production setup. 
 
-<x-converge::alert title="this approach introduce a big mess in zero downtime architecture since you can't update the docs repository only, so you need a new deployment for every docs changes and since it get rid of git when building the artifact"/>
+<x-converge::alert>
+his approach can introduce a mess in zero-downtime architecture since you can't update the docs repository independently. Every docs change requires a new deployment, and it eliminates Git usage when building the artifact.
+</x-converge::alert>
 
 but you can use it in local dev, and in production leverage the symlinks approach this is actually how we manage documentations on converge 
 
@@ -67,11 +69,10 @@ To set up symlinks, follow this example structure:
 
 <!-- STEP 2 -->
 <x-converge::steps.step number="2" title="Create the Symlink" description="Create a symlink within your Laravel app that points to the cloned documentation repository. You can do this using the following command:">
-<x-converge::container.code>
 ```shell
 ln -s /path/to/docs /path/to/your/laravel-app/docs
 ```
-</x-converge::container.code>
+
 </x-converge::steps.step>
 
 <!-- STEP 3 -->
@@ -81,7 +82,11 @@ You can now update the docs repository independently, and any changes will be re
 </x-converge::steps.vertical>
 @endblade
 
-<x-converge::alert type="warning" title="whenever docs's contents changes, reindexing search and clearing the cache is required"/>
+@blade
+<x-converge::alert type="warning">
+whenever docs's contents changes, reindexing search and clearing the cache is required
+</x-converge::alert>
+@endblade
 
 ### Using github actions to apdate docs seperately
 
@@ -133,32 +138,33 @@ jobs:
               echo "re-building the app cache..."
               php artisan optimize
 ```
-<x-converge::alert type="warning" title="reloading php8.3-fpm required sudo previliges wich may not regular users have "/>
+@blade
+<x-converge::alert type="warning">
+reloading php8.3-fpm required sudo previliges wich may not regular users have
+</x-converge::alert>
+@endblade
 
 #### Securing SSH and Sudo Permissions
 
 To keep your server secure, it’s recommended to use a single user for the Laravel app that has access to both the application and the documentation repository. The user should only be granted sudo privileges for running the following command: 
 
-<x-converge::container.code>
 ```shell
     sudo service php8.3-fpm reload
 ```
-</x-converge::container.code>
+
 
 To achieve this, you need to edit the **/etc/sudoers**file. Be sure to edit it with caution, as manual changes without syntax checks can break user permissions and lock you out of your server. Instead, use the `visudo` command to edit the sudoers file safely:
 
-<x-converge::container.code>
 ```shell
     sudo visudo 
 ```
-</x-converge::container.code>
+
 
 Then, add the following line at the appropriate place in the file:
 
-<x-converge::container.code>
 ```shell
 username ALL=NOPASSWD: usr/sbin/service php8.3-fpm reload
 ```
-</x-converge::container.code>
+
 
 This grants the `username` user permission to run the specified command without a password prompt, ensuring secure yet functional access.
