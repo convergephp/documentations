@@ -8,9 +8,11 @@ Converge is a lightweight framework designed to manage documentation and shipped
 ## Built In Docs
 If your documentation is part of a Laravel application, there is no need for additional setup when deploying Converge. Converge integrates seamlessly with your app and will serve the documentation directly from the defined file paths. However, whenever you update the documentation structure (e.g., adding/removing files) or modify the content itself (e.g., editing a Markdown file), you need to ensure that the search index is rebuilt, and the cache is cleared to reflect the changes.
 
+@blade
 <x-converge::alert>
 This use case is ideal for simpler documentation scenarios, such as API documentation or catalog-based docs, where content and structure don't change frequently.
 </x-converge::alert>
+@endblade
 
 **rebuild the search index for new changes to take effect:**
 
@@ -26,35 +28,35 @@ php artisan converge:index-search
 
 
 ## When Docs in sperate docs
-In many real-world use cases, larger frameworks or packages maintain separate repositories specifically for their documentation. 
+In many real-world use cases, larger frameworks or packages maintain separate repositories specifically for their documentation.
 
-This is typically done to have more granular control over the content, especially in cases where documentation changes frequently such as fixing typos, improving the material etc. 
+This is typically done to have more granular control over the content, especially in cases where documentation changes frequently such as fixing typos, improving the material etc.
 
 ### Using Git Submodule
 
 
-you may make the docs available in your laravel app by leveraging [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) feature in git so you will have repository of your docs inside the repositories of your actuall app without any history dependecy and already it's a production setup. 
+you may make the docs available in your laravel app by leveraging [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) feature in git so you will have repository of your docs inside the repositories of your actuall app without any history dependecy and already it's a production setup.
 
 <x-converge::alert>
 his approach can introduce a mess in zero-downtime architecture since you can't update the docs repository independently. Every docs change requires a new deployment, and it eliminates Git usage when building the artifact.
 </x-converge::alert>
 
-but you can use it in local dev, and in production leverage the symlinks approach this is actually how we manage documentations on converge 
+but you can use it in local dev, and in production leverage the symlinks approach this is actually how we manage documentations on converge
 
 ### Using Symlinks (Recomended)
 this is the cleanest and most scalable approach in production and even can be used in local. This method allows you to manage your documentation repository independently, without directly integrating it into your Laravel app's codebase. Symlinks provide a dynamic link between the app and documentation, which makes it much easier to manage and update the documentation content without affecting the application itself.
 To set up symlinks, follow this example structure:
 
-```
-        laravel-app/
-            app/*
-            bootstrap/*
-            config/*
-            docs/ --> symlink to the external docs repository
-            database/*
-            storage/*
-            ...
-         docs/ (separate documentation repository)
+```bash
+laravel-app/
+        app/*
+        bootstrap/*
+        config/*
+        docs/ --> symlink to the external docs repository
+        database/*
+        storage/*
+        ...
+        docs/ (separate documentation repository)
 ```
 
 #### Steps to Set Up Symlinks:
@@ -68,10 +70,13 @@ To set up symlinks, follow this example structure:
 </x-converge::steps.step>
 
 <!-- STEP 2 -->
-<x-converge::steps.step number="2" title="Create the Symlink" description="Create a symlink within your Laravel app that points to the cloned documentation repository. You can do this using the following command:">
+<x-converge::steps.step number="2" title="Create the Symlink">
+<x-slot:description>
+Create a symlink within your Laravel app that points to the cloned documentation repository. You can do this using the following command:
 ```shell
 ln -s /path/to/docs /path/to/your/laravel-app/docs
 ```
+</x-slot:description>
 
 </x-converge::steps.step>
 
@@ -123,14 +128,14 @@ jobs:
               cd ~/path/docs
 
               echo "Pulling latest changes..."
-              git pull origin master 
+              git pull origin master
 
               echo "Re-indexing docs search..."
               cd ~/path/to/laravel-app
               php artisan converge:index-search
 
               echo "Reloading php fpm..."
-              sudo service php8.3-fpm reload 
+              sudo service php8.3-fpm reload
 
               echo "clearing the cache..."
               php artisan cache:clear
@@ -146,17 +151,17 @@ reloading php8.3-fpm required sudo previliges wich may not regular users have
 
 #### Securing SSH and Sudo Permissions
 
-To keep your server secure, it’s recommended to use a single user for the Laravel app that has access to both the application and the documentation repository. The user should only be granted sudo privileges for running the following command: 
+To keep your server secure, it’s recommended to use a single user for the Laravel app that has access to both the application and the documentation repository. The user should only be granted sudo privileges for running the following command:
 
 ```shell
-    sudo service php8.3-fpm reload
+sudo service php8.3-fpm reload
 ```
 
 
 To achieve this, you need to edit the **/etc/sudoers**file. Be sure to edit it with caution, as manual changes without syntax checks can break user permissions and lock you out of your server. Instead, use the `visudo` command to edit the sudoers file safely:
 
 ```shell
-    sudo visudo 
+sudo visudo
 ```
 
 

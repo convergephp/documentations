@@ -31,17 +31,18 @@ Converge Components are pure Laravel blade components enhanced with the Converge
 </x-converge::steps.step>
 
 <!-- STEP 2 -->
-<x-converge::steps.step number="2" title="Add Converge Components repository to your composer.json file" description="You may install Converge Components as a Composer package via our private Satis repository. To get started, add the following repository to your application's composer.json file:">
-<x-converge::container.code>
+<x-converge::steps.step number="2" title="Add Converge Components repository to your composer.json file">
+<x-slot:description>
+You may install Converge Components as a Composer package via our private Satis repository. To get started, add the following repository to your application's composer.json file:
 ```json
 {
-  "repositories": [{
-    "type": "composer",
+    "repositories": [{
+        "type": "composer",
     "url": "https://packagist.convergephp.com"
   }]
 }
 ```
-</x-converge::container.code>
+</x-slot:description>
 </x-converge::steps.step>
 
 <!-- STEP 3 -->
@@ -55,25 +56,22 @@ Converge Components are pure Laravel blade components enhanced with the Converge
     When running `composer require converge/converge-components`, you will be prompted to provide a username and password. Use the email address associated with your Converge account as the username and your <strong>license key</strong> as the password. These credentials will authenticate your Composer session and grant you permission to download the Converge Components source code.
     </li>
 </ul>
-</x-slot:description>
 
-<x-converge::container.code>
 ```bash
 composer require convergephp/blade-components
 ```
-</x-converge::container.code>
+</x-slot:description>
 </x-converge::steps.step>
 
 <!-- STEP 4 -->
 <x-converge::steps.step title="Publishing assets" last color="success">
 <x-slot:description>
-    <p style="line-height:1.8rem">Run the command below at the root of your Laravel project. This will create a <x-converge::code>public/vendor/converge</x-converge::code> directory in your public directory.</p>
-</x-slot:description>
-<x-converge::container.code>
+Run the command below at the root of your Laravel project. This will create a `public/vendor/converge` directory in your public directory.
+
 ```bash
 php artisan vendor:publish --tag=converge-components-assets
 ```
-</x-converge::container.code>
+</x-slot:description>
 </x-converge::steps.step>
 
 </x-converge::steps.vertical>
@@ -85,19 +83,19 @@ php artisan vendor:publish --tag=converge-components-assets
 
 Running `composer update` at the root of your project will pull in the latest version of Converge Components.
 
-<x-converge::container.code>
 ```bash
 composer update convergephp/blade-components
 ```
-</x-converge::container.code>
 
+@blade
+<x-converge::alert type="warning">
+Always publish assets when you update to a new version of Converge Components
+</x-converge::alert>
+@endblade
 
-<x-converge::alert type="warning" title="Always publish assets when you update to a new version of Converge Components"/>
 
 To automate publishing of the Converge Components files every time you run `composer update`, you can add the following lines to your `composer.json` file under the `scripts` key.
 
-<!-- @blade -->
-<x-converge::container.code>
 ```json
 "scripts": {
 "post-update-cmd": [
@@ -107,4 +105,3 @@ To automate publishing of the Converge Components files every time you run `comp
 ],
 }
 ```
-</x-converge::container.code>
