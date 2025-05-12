@@ -1,10 +1,13 @@
 ---
-title: view interceptors
+title: menu items
+toc: [2,5]
 ---
 
-## View Interceptors
+# Menu Items
 
-While Converge has a highly customizable UI through themes, it also allows you to inject views at specific points during the rendering process. The view interceptor gives you this flexibility you can register views or hooks at predefined view locations. This is especially useful when adding UI elements like cards (e.g., Carbon Ads) or badges to specific items in the sidebar.
+## Introduction
+Menu items define navigational links or buttons that appear in your application’s UI. They can be configured per module and support customization such as icons, styles, target behavior, and grouping. This section covers how to define, style, and organize menu items using **Converge**.
+
 
 ### Adding Menu Items
 menu items can be configured per module. To add a menu item:

@@ -1,6 +1,6 @@
-## Converge Clusters
+# Converge Clusters
 
-### Default Cluster
+## Default Cluster
 
 Clusters are logical groupings of documentation files within a version of a module. Each version can have multiple clusters, and clusters typically represent major content areas like:
 
@@ -54,7 +54,7 @@ public function module(Module $module): Module
 }
 ```
 
-#### Why default Clusters setup needed ?
+### Why default Clusters setup needed ?
 
 Whenever you need to add a cluster for a specific version, you must set up a default cluster by marking it with  `->default()`, A default cluster behaves like a regular cluster but, by default, uses the path provided to the version itself to serve its contents.
 
@@ -71,7 +71,7 @@ in fresh module it will use the path provided to the `in()` to serve contents
     )->default();
 ```
 
-#### Adding More clusters
+### Adding More clusters
 
 After setting up your default cluster and assigning it a label, it's time to add more clusters. Each cluster consists of three essential building blocks:
 -  _URL_
@@ -107,11 +107,11 @@ Additionally, you can change the order of the cluster by using the ``->sort()`` 
     );
 ```
 
-### Tunning Cluser Url
+## Tunning Cluser Url
 
 By default, the default cluster of each version (including the quieted version) will be accessed using the URL defined for that version. Additional clusters will append to the URL specified in the ``route()`` method, e.g., ``docs/components``, ``docs/v3.x/guide``, etc. However, Converge allows you to define how the cluster's URL will be relative to the root URL.
 
-#### Absolute Url
+### Absolute Url
 - to make you cluster's URL absolute to root (`/`) URL you may use `absoluteUrl()` method:
 
 ```php
@@ -129,7 +129,7 @@ this configurations works for explicit defained versions
 </x-converge::alert>
 @endblade
 
-#### Absolute Url With Module Url
+### Absolute Url With Module Url
 
 - To make your cluster URL relative to your module URL (and escape the version URL)  for example eg: `docs/v4.x/guide` to `/docs/quide`, use the `absoluteUrlWithModuleUrl()`:
 
@@ -141,7 +141,7 @@ this configurations works for explicit defained versions
     );
 ```
 
-#### Absolute Url With Module Url
+### Absolute Url With Module Url
 
 - To make your cluster URL absolute to your module URL, including the version, use the  `absoluteUrlWithModuleUrl()` method . For example, from ``docs/v4.x/guide`` to ``/V4.x/guide``:
 
