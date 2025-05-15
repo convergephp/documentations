@@ -12,14 +12,18 @@ Converge  is written in PHP, JavaScript, and leverages several Laravel component
 
 @blade
 <x-converge::steps.vertical>
-
+<x-converge::alert>
+since converge still in beta, make sure your Composer minimum stability is set to `beta`
+</x-converge::alert>
 <!-- STEP 1 -->
 <x-converge::steps.step
         number="1"
         title="Installation">
 
 <x-slot:description>
-First you shoud install converge using composer
+First you shoud install converge using composer 
+
+
 ```php
 composer require convergephp/converge
 ```
