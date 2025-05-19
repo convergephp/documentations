@@ -4,7 +4,7 @@ description: A collapsible content component for displaying information in a spa
 category: Components
 ---
 
-## Accordion Group
+# Accordion Group
 
 The Accordion Group component allows you to create a set of related accordions where only one can be open at a time.
 

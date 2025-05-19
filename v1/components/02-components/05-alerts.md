@@ -110,6 +110,34 @@ To denote a word or phrase as code, enclose it in backticks `code`
 </x-converge::alert>
 ```
 
+
+### Markdown Support
+
+The alert component supports rich markdown content within descriptions:
+
+@blade
+<x-converge::alert>
+**Bold text**
+
+*italic text*
+
+- list item
+- list item 2
+</x-converge::alert>
+@endblade
+
+```
+<x-converge::alert>
+**Bold text**
+
+*italic text*
+
+- list item
+- list item 2
+</x-converge::alert>
+```
+
+
 ## Props
 
 | Prop Name | Type | Default | Required | Description |
