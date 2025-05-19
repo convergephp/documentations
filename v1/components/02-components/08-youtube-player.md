@@ -28,28 +28,26 @@ This example shows all available properties:
 @blade
 <x-converge::youtube-player
     videoId="rZOGx3iCDkA"
-    videoTitle="Never Gonna Give You Up"
-    description="Rick Astley's official music video"
+    videoTitle="Laravel Cloud As Staging Environment"
+    description="Learn how to use laravel cloud as staging envirenment"
     publishedDate="2009-10-25T00:00:00Z"
     duration="PT3M33S"
     :autoplay="true"
     :controls="true"
     :enhancedPrivacy="true"
-    class="my-8 mx-auto max-w-3xl"
 />
 @endblade
 
 ```html
 <x-converge::youtube-player
     videoId="rZOGx3iCDkA"
-    videoTitle="Never Gonna Give You Up"
-    description="Rick Astley's official music video"
+    videoTitle="Laravel Cloud As Staging Environment"
+    description="Learn how to use laravel cloud as staging envirenment"
     publishedDate="2009-10-25T00:00:00Z"
     duration="PT3M33S"
     :autoplay="false"
     :controls="true"
     :enhancedPrivacy="true"
-    class="my-8 mx-auto max-w-3xl"
 />
 ```
 
