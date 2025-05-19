@@ -21,28 +21,7 @@ jobs:
 
         with:
             host: 89.117.36.52
-            username: converge
+            username: ${{ secrets.SSH_USER }}
             key: ${{ secrets.SSH_PRIVATE_KEY }}
             passphrase: ${{ secrets.SSH_PASSPHRASE }}
-            script: |
-              set -e
-              echo "Navigating to docs repo..."
-              cd ~/www/docs
-
-              echo "Pulling latest changes..."
-              git pull origin master
-
-              echo "Re-indexing docs search..."
-              cd ../current
-              php artisan converge:index-search
-
-              echo "Reloading php fpm..."
-              sudo service php8.3-fpm reload
-
-              echo "clearing the cache..."
-              php artisan cache:clear
-
-              echo "re-invoking the cache..."
-              php artisan config:cache
-
-              php artisan route:cache
+            script: ${{ secrets.REMOTE_DEPLOY_SCRIPT_PATH }}
