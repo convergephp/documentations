@@ -28,3 +28,4 @@ public function module(Module $module): Module
 }
 ```
 
+converge makes injecting view more robust by giving you the context you are in so you can 
