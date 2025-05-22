@@ -45,11 +45,13 @@ Create clickable cards that link to a URL:
 @endblade
 
 ```html
+@blade
 {+<x-converge::card.horizontal+}
     title="Without link card"
     description="A concise description of this feature and its benefits."
     icon="heroicon-o-camera"
 />
+@endblade
 ```
 
 ## Color Variants
@@ -92,6 +94,7 @@ Customize card appearance with different color schemes:
 @endblade
 
 ```html
+@blade
 <x-converge::card
     title="Primary"
     description="Default color scheme."
@@ -107,6 +110,7 @@ Customize card appearance with different color schemes:
 />
 
 <!-- Additional color variants: warning, error, info -->
+@endblade
 ```
 
 ## Custom Icons
@@ -130,12 +134,14 @@ composer require davidhsianturi/blade-bootstrap-icons
 @endblade
 
 ```html
+@blade
 <x-converge::card
     title="Support Center"
     description="Get help and answers to common questions."
     icon="iconsax-bul-wallet-minus"
     color="error"
 />
+@endblade
 ```
 
 ## Props

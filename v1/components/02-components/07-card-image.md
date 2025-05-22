@@ -20,10 +20,12 @@ The component requires minimal setup to get started with an attractive image car
 @endblade
 
 ```html
+@blade
 <x-converge::card.image title="Featured Content"
                         description="This is a description of the featured content."
                         {+src="https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"+}
                         alt="Featured image" />
+@endblade
 ```
 
 ## Image Source Options
@@ -42,10 +44,12 @@ Perfect for using images from CDNs, external services like Unsplash, or any publ
 @endblade
 
 ```html
+@blade
 <x-converge::card.image title="External Image"
                         description="Image loaded from an unsplash via URL."
                         {+src="https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"+}
                         alt="External image example" />
+@endblade
 ```
 
 ### Laravel Storage Source
@@ -60,10 +64,12 @@ Seamlessly integrates with Laravel's storage system. This approach is ideal for 
 @endblade
 
 ```html
+@blade
 <x-converge::card.image title="Storage Image"
                         description="Image loaded from Laravel storage directory."
                         {+srcStorage="images/exemple.webp"+}
                         alt="Storage image example" />
+@endblade
 ```
 
 > **Note:** Remember to create the symbolic link between your storage and public directories using `php artisan storage:link` for this feature to work correctly.
@@ -80,10 +86,12 @@ For images stored directly in your application's public directory (`public/image
 @endblade
 
 ```html
+@blade
 <x-converge::card.image title="Public Image"
                         description="Image loaded from public directory."
                         {+srcPublic="images/card.webp"+}
                         alt="Public directory image" />
+@endblade
 ```
 
 ## Theme-Aware Images
@@ -105,11 +113,13 @@ Use different external URLs for dark and light themes:
 @endblade
 
 ```html
+@blade
 <x-converge::card.image title="Theme-Aware External Images"
                         description="Different images for dark and light themes from external URLs."
                         {+src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"+}
                         {+srcLight="https://images.unsplash.com/photo-1628171937573-a46e95b81d16?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"+}
                         alt="Theme-aware external image" />
+@endblade
 ```
 
 ### Storage Theme Images
@@ -125,11 +135,13 @@ Different images from your Laravel storage for each theme:
 @endblade
 
 ```html
+@blade
 <x-converge::card.image title="Theme-Aware Storage Images"
                         description="Different images for dark and light themes from storage."
                         {+srcStorage="images/hero-dark.webp"+}
                         {+srcStorageLight="images/hero-light.webp"+}
                         alt="Theme-aware storage image" />
+@endblade
 ```
 
 ### Public Directory Theme Images
@@ -145,11 +157,13 @@ Apply theme awareness to images in your public directory:
 @endblade
 
 ```html
+@blade
 <x-converge::card.image title="Theme-Aware Public Images"
                         description="Different images for dark and light themes from public directory."
                         {+srcPublic="images/hero-dark.webp"+}
                         {+srcPublicLight="images/hero-light.webp"+}
                         alt="Theme-aware public image" />
+@endblade
 ```
 
 ### Mixed Source Theme Images
@@ -171,11 +185,13 @@ You can combine different source types between dark and light modes to best suit
 @endblade
 
 ```html
+@blade
 <x-converge::card.image title="Mixed Source Theme Images"
                         description="Storage image for dark mode, external URL for light mode."
                         {+srcStorage="images/hero-dark.webp"+}
                         {+srcLight="https://images.unsplash.com/photo-1628171937573-a46e95b81d16?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"+}
                         alt="Mixed source theme image" />
+@endblade
 ```
 
 ## Advanced Usage Tips

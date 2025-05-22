@@ -41,6 +41,7 @@ The Steps component is designed to visually represent sequential information in 
 @endblade
 
 ```html
+@blade
 <x-converge::steps.vertical>
     <x-converge::steps.step title="Setup Project">
         <x-slot:description>
@@ -60,6 +61,7 @@ The Steps component is designed to visually represent sequential information in 
         </x-slot:description>
     </x-converge::steps.step>
 </x-converge::steps.vertical>
+@endblade
 ```
 
 ## Numbered Steps
@@ -92,6 +94,7 @@ Use the `number` attribute to display sequential numbers instead of icons:
 @endblade
 
 ```html
+@blade
 <x-converge::steps.vertical>
     <x-converge::steps.step number="1" title="Planning Phase">
         <x-slot:description>
@@ -117,6 +120,7 @@ Use the `number` attribute to display sequential numbers instead of icons:
         </x-slot:description>
     </x-converge::steps.step>
 </x-converge::steps.vertical>
+@endblade
 ```
 
 ### Custom Icons
@@ -156,6 +160,7 @@ composer require davidhsianturi/blade-bootstrap-icons
 @endblade
 
 ```html
+@blade
 <x-converge::steps.vertical>
     <x-converge::steps.step icon="heroicon-o-cog" title="Configure Settings">
         <x-slot:description>
@@ -169,6 +174,7 @@ composer require davidhsianturi/blade-bootstrap-icons
         </x-slot:description>
     </x-converge::steps.step>
 </x-converge::steps.vertical>
+@endblade
 ```
 
 ### Custom Colors
@@ -198,6 +204,7 @@ Valid colors: `primary`, `success`, `warning`, `error`, `info`, `accent`
 @endblade
 
 ```php
+@blade
 <x-converge::steps.vertical>
     <x-converge::steps.step title="Warning step" color="warning">
         <x-slot:description>
@@ -215,6 +222,7 @@ Valid colors: `primary`, `success`, `warning`, `error`, `info`, `accent`
         </x-slot:description>
     </x-converge::steps.step>
 </x-converge::steps.vertical>
+@endblade
 ```
 
 ### Advanced Markdown Support
@@ -247,6 +255,7 @@ public function example()
 
 
 ```php
+@blade
 <x-converge::steps.vertical>
     <x-converge::steps.step title="Markdown Example">
         <x-slot:description>
@@ -268,6 +277,7 @@ public function example()
         </x-slot:description>
     </x-converge::steps.step>
 </x-converge::steps.vertical>
+@endblade
 ```
 
 ### Embedding Other Components
@@ -292,6 +302,7 @@ You can nest other Converge components inside steps:
 @endblade
 
 ```php
+@blade
 <x-converge::steps.vertical>
     // step 1
     <x-converge::steps.step title="Step with Alert" description="Basic description here.">
@@ -311,6 +322,7 @@ You can nest other Converge components inside steps:
                     class="group mt-4"></x-converge::card>
     </x-converge::steps.step>
 </x-converge::steps.vertical>
+@endblade
 ```
 
 ## Props

@@ -17,9 +17,11 @@ The Alerts component provides a flexible and visually distinctive way to display
 @endblade
 
 ```html
+@blade
 <x-converge::alert type="primary">
     This is a standard primary alert with important information.
 </x-converge::alert>
+@endblade
 ```
 
 ## Alert Types
@@ -53,6 +55,7 @@ The component supports multiple alert types to convey different contexts:
 @endblade
 
 ```html
+@blade
 <x-converge::alert type="primary">
      This is a primary alert with that render a word or phrase as `code`.
 </x-converge::alert>
@@ -76,6 +79,7 @@ The component supports multiple alert types to convey different contexts:
 <x-converge::alert type="ghost">
     This is a ghost alert with minimal styling.
 </x-converge::alert>
+@endblade
 ```
 
 ### Without Icons
@@ -89,9 +93,11 @@ You can disable the icon display by setting the `icon` attribute to `false`:
 @endblade
 
 ```html
+@blade
 <x-converge::alert type="warning" :icon="false">
     This warning alert appears without an icon.
 </x-converge::alert>
+@endblade
 ```
 
 ### Code Example in Alerts
@@ -105,9 +111,11 @@ To denote a word or phrase as code, enclose it in backticks `code`
 @endblade
 
 ```html
+@blade
 <x-converge::alert type="primary">
 To denote a word or phrase as code, enclose it in backticks `code`
 </x-converge::alert>
+@endblade
 ```
 
 
@@ -126,7 +134,8 @@ The alert component supports rich markdown content within descriptions:
 </x-converge::alert>
 @endblade
 
-```
+```html
+@blade
 <x-converge::alert>
 **Bold text**
 
@@ -135,6 +144,7 @@ The alert component supports rich markdown content within descriptions:
 - list item
 - list item 2
 </x-converge::alert>
+@endblade
 ```
 
 

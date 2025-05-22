@@ -18,8 +18,10 @@ Getting started with the Image component requires minimal configuration:
 @endblade
 
 ```html
+@blade
 <x-converge::image src="https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?q=80&w=2071&auto=format&fit=crop"
                     alt="Beautiful landscape" />
+@endblade
 ```
 
 ## Image Source Options
@@ -43,9 +45,11 @@ Use different source image for dark and light themes:
 @endblade
 
 ```html
+@blade
 <x-converge::image src="https://images.unsplash.com/photo-1509023464722-18d996393ca8"
                     srcLight="https://images.unsplash.com/photo-1628171937573-a46e95b81d16"
                     alt="Theme-aware nature image" />
+@endblade
 ```
 > You can even mix the source e.g. `src` from external source and `srcStorageLight` from storage.
 
@@ -60,9 +64,11 @@ Improve page performance by enabling lazy loading for images below the fold:
 @endblade
 
 ```html
+@blade
 <x-converge::image src="https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5"
                     alt="Lazy loaded image"
                     loading="lazy"/>
+@endblde
 ```
 
 ###  Images columns
@@ -79,12 +85,14 @@ Use `style`or `class`attribute to make a grid :
 @endblade
 
 ```html
+@blade
 <div class="grid grid-cols-2 gap-4">
         <x-converge::image src="https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5"
                             alt="Cover fitting" />
         <x-converge::image src="https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5"
                             alt="Contain fitting" />
 </div>
+@endblade
 ```
 
 ## Advanced Usage Tips
