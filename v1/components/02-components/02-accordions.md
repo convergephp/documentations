@@ -33,10 +33,12 @@ Accordions are particularly useful when you need to:
 
 here is the code of this example
 ```php
+@blade
 <x-converge::accordion title="Introduction to Accordions" open="true">
   Accordions provide a way to organize content into collapsible sections.
   // any content
 </x-converge::accordion>
+@endblade
 ```
 
 ## Props

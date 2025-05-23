@@ -26,6 +26,7 @@ The Accordion Group component allows you to create a set of related accordions w
 
 here is the code of this example
 ```php
+@blade
 <x-converge::accordion.group>
   // item 1
   <x-converge::accordion.item title="First Item" index="0">
@@ -42,6 +43,7 @@ here is the code of this example
      **Content for third accordion item.**
   </x-converge::accordion.item>
 </x-converge::accordion.group>
+@endblade
 ```
 
 ### Accordion Group Props

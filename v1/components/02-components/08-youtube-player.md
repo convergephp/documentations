@@ -16,9 +16,11 @@ The YouTube Video component provides an elegant way to embed YouTube videos with
 @endblade
 
 ```html
+@blade
 <x-converge::youtube-player
     videoId="rZOGx3iCDkA"
 />
+@endblade
 ```
 
 ## Complete Example
@@ -39,6 +41,7 @@ This example shows all available properties:
 @endblade
 
 ```html
+@blade
 <x-converge::youtube-player
     videoId="rZOGx3iCDkA"
     videoTitle="Laravel Cloud As Staging Environment"
@@ -49,6 +52,7 @@ This example shows all available properties:
     :controls="true"
     :enhancedPrivacy="true"
 />
+@endblade
 ```
 
 ## Props
