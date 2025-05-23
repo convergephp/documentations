@@ -93,13 +93,66 @@ use Converge\Sidebar\SidebarItem;
         $item->getUrl(); // eg: /docs/modules/view-interceptors
     });
 ```
-### Sidebar Group Context (`SidebarGroup`)
+### Sidebar Groups 
 
 These interception points are related to sidebar groups and provide access to the `SidebarGroup` instance:
+
+<x-converge::divide
+    title="interception points"
+    color="success"
+/>
 
 * `Interceptor::BEFORE_SIDEBAR_GROUP_LABEL` — Before the sidebar group label
 * `Interceptor::AFTER_SIDEBAR_GROUP_LABEL` — After the sidebar group label
 * `Interceptor::BEFORE_SIDEBAR_GROUP_ITEMS` — Before the sidebar group items
 * `Interceptor::AFTER_SIDEBAR_GROUP_ITEMS` — After the sidebar group items
 
-Each context object provides helper methods to let you evaluate and conditionally inject content precisely where it's needed.
+You can use the methods provided by `SidebarItem` to tailor the output as needed.
+<x-converge::divide
+    title="available methods in SidebarGroup"
+    color="success"
+/>
+
+```php
+use Illuminate\Contracts\View\View;
+use Converge\Sidebar\SidebarItem;
+    ->intercept(Interceptor::AFTER_SIDEBAR_ITEM, function (SidebarItem $item): View|string|null {
+        
+        $item->getLabel(); // eg : modules
+
+        $item->getSort(); 
+        
+        $item->getDepth(); 
+
+        $item->getUrl(); // eg: /docs/modules
+
+        $item->hasActiveChild(); // @todo 
+    });
+```
+### Clusters Points
+
+<x-converge::divide
+    title="interception points"
+    color="success"
+/>
+
+* `Interceptor::BEFORE_SIDEBAR_CLUSTERS` 
+* `Interceptor::AFTER_SIDEBAR_CLUSTERS`
+
+### Sidebar Points
+
+no context aware available
+<x-converge::divide
+    title="interception points"
+    color="success"
+/>
+
+* `Interceptor::SIDEBAR_START` 
+* `Interceptor::BEFORE_SIDEBAR_ITEMS`
+* `Interceptor::AFTER_SIDEBAR_ITEMS`
+* `Interceptor::SIDEBAR_END`
+
+Other points coming soon... 
+
+
+
