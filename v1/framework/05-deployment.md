@@ -26,7 +26,7 @@ php artisan converge:index-search
 ```
 
 
-## When Docs in sperate docs
+## When Docs in sperate git repository
 In many real-world use cases, larger frameworks or packages maintain separate repositories specifically for their documentation. 
 
 This is typically done to have more granular control over the content, especially in cases where documentation changes frequently such as fixing typos, improving the material etc. 
