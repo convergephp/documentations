@@ -33,7 +33,7 @@ If you want to contribute to the converge framework, then you may want to test i
 
 Install the packages in your app's `composer.json`:
 
-```jsonc
+```json
 {
     // ...
     "require": {
