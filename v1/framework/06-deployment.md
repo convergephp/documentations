@@ -1,4 +1,3 @@
-
 ---
 title: 'Using Converge in Production'
 ---
@@ -22,7 +21,7 @@ php artisan converge:index-search
 
 **clear the cache to destroy the files tree cache**
 ```bash
-php artisan converge:index-search
+php artisan cache:clear
 ```
 
 
