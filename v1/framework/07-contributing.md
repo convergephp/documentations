@@ -58,7 +58,7 @@ Once you're finished making changes, you can commit them and submit a pull reque
 
 ## Security vulnerabilities
 
-If you discover a security vulnerability within Converge, please email Dan Harrin via [convergephp@gmail.com](mailto:convergephp@gmail.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Converge, please email converge team via [convergephp@gmail.com](mailto:convergephp@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## Code of Conduct
 
