@@ -124,4 +124,9 @@ public function module(Module $module): Module
         });
 }
 ```
+the custom tags w'll be like:
+
+```html
+<meta name="robots" content="index, follow">
+```
 These features give you full control and flexibility over how your documentation pages are indexed and displayed by search engines and social platforms.
