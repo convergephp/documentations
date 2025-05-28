@@ -166,7 +166,7 @@ no context aware available
 These are particularly useful for injecting scripts like analytics tools (e.g., Google Analytics).
 You can place your analytics script in a Blade component for clean reuse. For example:``resources/views/components/analytics/gtags.blade.php`` : 
 
-```html
+```blade
 @production
  <!-- gtags -->
     @if (config('services.google.analytics_id'))
