@@ -31,7 +31,7 @@ Converge Components are pure Laravel blade components enhanced with the Converge
 </x-converge::steps.step> -->
 
 <!-- STEP 2 -->
-<x-converge::steps.step number="1" title="Add Converge Components repository to your composer.json file">
+<!-- <x-converge::steps.step number="1" title="Add Converge Components repository to your composer.json file">
 <x-slot:description>
 You may install Converge Components as a Composer package via our private Satis repository. To get started, add the following repository to your application's composer.json file:
 ```json
@@ -43,24 +43,17 @@ You may install Converge Components as a Composer package via our private Satis 
 }
 ```
 </x-slot:description>
-</x-converge::steps.step>
+</x-converge::steps.step> -->
 
 <!-- STEP 3 -->
-<x-converge::steps.step number="2" title="Install">
+<x-converge::steps.step number="1" title="Install">
 <x-slot:description>
-<ul>
-    <li style="line-height: 1.8rem">
-    At the root of your Laravel project, run the following command in your console terminal to pull in the package.
-    </li>
-    <li style="line-height: 1.8rem">
-    When running `composer require converge/converge-components`, you will be prompted to provide a username and password. Use the email address associated with your Converge account as the username and your <strong>license key</strong> as the password. These credentials will authenticate your Composer session and grant you permission to download the Converge Components source code.
-    </li>
-</ul>
 
 ```bash
 composer require convergephp/blade-components
 ```
 </x-slot:description>
+
 </x-converge::steps.step>
 
 <!-- STEP 4 -->
