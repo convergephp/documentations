@@ -53,6 +53,18 @@ return $module
 
 This feature unlocks powerful UI customizations, such as adding badges, icons, or additional markup based on the current rendering context.
 
+
+when injecting some views you may re build the assets again using:
+
+```shell
+php artisan converge:build
+```
+
+you may keep watching changes by using :
+```shell
+php artisan converge:build --watch
+```
+
 ## Available Interception Points
 
 ### Sidebar Items
