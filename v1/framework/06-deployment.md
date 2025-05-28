@@ -36,7 +36,7 @@ This is typically done to have more granular control over the content, especiall
 you may make the docs available in your laravel app by leveraging [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) feature in git so you will have repository of your docs inside the repositories of your actuall app without any history dependecy and already it's a production setup. 
 
 <x-converge::alert>
-his approach can introduce a mess in zero-downtime architecture since you can't update the docs repository independently. Every docs change requires a new deployment, and it eliminates Git usage when building the artifact.
+This approach can introduce a mess in zero-downtime architecture since you can't update the docs repository independently. Every docs change requires a new deployment, and it eliminates Git usage when building the artifact.
 </x-converge::alert>
 
 but you can use it in local dev, and in production leverage the symlinks approach this is actually how we manage documentations on converge 
@@ -88,7 +88,7 @@ whenever docs's contents changes, reindexing search and clearing the cache is re
 </x-converge::alert>
 @endblade
 
-### Using github actions to apdate docs seperately
+### Using github actions to update docs seperately
 
 ```yml
 name: update docs on server
