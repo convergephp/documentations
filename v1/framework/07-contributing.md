@@ -8,11 +8,11 @@ title: Contributing
 
 If you find a bug in Converge, please report it by opening an issue on our [GitHub repository](https://github.com/convergephp/converge/issues/new/choose). Before opening an issue, please search the [existing issues](https://github.com/convergephp/converge/issues?q=is%3Aissue) to see if the bug has already been reported.
 
-Please make sure to include as much information as possible, including the version of packages in your app. You can use this Artisan command in your app to open a new issue with all the correct versions pre-filled:
+<!-- Please make sure to include as much information as possible, including the version of packages in your app. You can use this Artisan command in your app to open a new issue with all the correct versions pre-filled:
 
 ```bash
 php artisan converge:make-issue
-```
+``` -->
 
 When creating an issue, we require a "reproduction repository". **Please do not link to your actual project**, what we need instead is a _minimal_ reproduction in a fresh project without any unnecessary code. This means it doesn't matter if your real project is private / confidential, since we want a link to a separate, isolated reproduction. This allows us to fix the problem much quicker. **Issues will be automatically closed and not reviewed if this is missing, to preserve maintainer time and to ensure the process is fair for those who put effort into reporting.** If you believe a reproduction repository is not suitable for the issue, which is a very rare case, you may still open regular issue but please explain it well. 
 
