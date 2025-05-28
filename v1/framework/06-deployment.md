@@ -70,9 +70,11 @@ To set up symlinks, follow this example structure:
 <!-- STEP 2 -->
 <x-converge::steps.step number="2" title="Create the Symlink" description="Create a symlink within your Laravel app that points to the cloned documentation repository. You can do this using the following command:">
 
-  ```shell
-  ln -s /path/to/docs /path/to/your/laravel-app/docs
-  ```
+<x-slot:description>
+```bash
+ln -s /path/to/docs /path/to/your/laravel-app/docs
+```
+</x-slot:description>
 </x-converge::steps.step>
 
 <!-- STEP 3 -->
