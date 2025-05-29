@@ -5,6 +5,7 @@ The **Converge Framework** is designed to **streamline documentation management*
 - Open-source packages
 - Private packages
 - Commercial software
+- documenting code in large teams
 - Or any project requiring comprehensive documentation
 
 Converge simplifies the process and allows you to focus on **writing actual content** in minutes, rather than spending time designing or building a documentation website from scratch.
@@ -29,38 +30,43 @@ Converge lets you write fully separate, styled logic documentation for multiple 
 
 Do you have multiple versions of your package or software?
 
-Converge is built with versioning in mind. You can maintain multiple versions of your documentation, with each version having its own dedicated content. Converge handles the complexity for you with simple configurations in the [module provider](/docs/modules/module-provider).
+Converge is built with [versioning](./modules/versions) in mind. You can maintain multiple versions of your documentation, with each version having its own dedicated content. Converge handles the complexity for you with simple configurations in the [module provider](/docs/modules/module-provider).
+
+### Clustering built-In
+
+Within each version, Converge supports [clustering](./modules/clusters), allowing you to organize your content into clusters groups of related documents or topics. This helps keep your documentation structured and intuitive for users and performence, especially when dealing with large or complex projects.
+
+### Built-In Search Engine 
+
+Converge comes with a custom-built [search engine](./search-engine) developed entirely in raw PHP. It’s designed specifically for documentation content, providing fast and relevant full-text search across your docs. The search engine indexes your content automatically,  ensuring users quickly find exactly what they’re looking for.
 
 ### Blade Component Support
 
-Converge scans your markdown files and renders any Blade component. It also comes with a set of pre-styled components, ranging from tips to custom code blocks.
+Converge scans your markdown files and renders any  [Blade component](/docs/components/getting-started/installation), It also comes with a set of pre-styled components, ranging from tips to custom code blocks.
 
 Here’s a sneak peek at some of the components:
 
 ```html
 this is in you mardown file
-<x-converge::tips
-  label="this is a self closing one in the multiple line"
-  class="text-purple-500"
-  variant="good"
-/>
+<x-converge::alert>
+This approach can introduce a mess in zero downtime orchestration
+</x-converge::alert>
 ```
 
 this what it generate:
 
-<x-converge::tips
-label="this is a self closing one in the multiple line"
-class="text-purple-500"
-variant="good"
-/>
+<x-converge::alert>
+This approach can introduce a mess in zero downtime orchestration
+</x-converge::alert>
 
-Magic, right? We’ve built a full Markdown extension for the [commonmark package](https://commonmark.thephpleague.com/) to do that for ya.
+Magic, right? We’ve built a full Markdown extension for the [commonmark package](https://commonmark.thephpleague.com/) to achieve that.
 
 We’ve included more than **12 pre-built components** for you, which are highly integrated with the design system. Plus, you can create any custom Blade component you want.
 
-### dark/light mode
+### dark/light themes mode
 
-Converge comes with built-in Light/Dark Mode support, allowing you to provide a seamless experience for users regardless of their preferences. The theme automatically switches based on system settings or manual selection, ensuring readability and comfort in any environment.
+Converge comes with built-in Light/Dark Mode support, allowing you to provide a seamless experience for users regardless of their preferences. The theme automatically switches based on system settings or manual selection, ensuring readability and comfort in any environment. [refer to themes ](./customization/themes)
+
 
 ### Why Converge?
 
