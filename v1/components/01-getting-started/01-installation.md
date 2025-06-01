@@ -6,8 +6,9 @@ title: Installation
 
 Converge Components is a collection of specialized Blade components designed specifically for documentation management. These components integrate seamlessly with the Converge Framework to create consistent, professional technical documentation with advanced theming capabilities.
 
-## Requirements
 
+
+## Requirements
 
 Converge Components are pure Laravel blade components enhanced with the Converge theming system. The package has the following dependencies:
 
@@ -20,30 +21,7 @@ Converge Components are pure Laravel blade components enhanced with the Converge
 @blade
 <x-converge::steps.vertical>
 
-<!-- STEP 1 -->
-<!-- <x-converge::steps.step number="1" title="Purchase a license">
-<x-converge::card
-    url="https://convergephp.com/toolkits/components"
-    title="Purchase Converge Components"
-    icon="iconsax-bul-card-pos"
-    color="primary"
-    description="Purchase a license for Converge Components"/>
-</x-converge::steps.step> -->
 
-<!-- STEP 2 -->
-<!-- <x-converge::steps.step number="1" title="Add Converge Components repository to your composer.json file">
-<x-slot:description>
-You may install Converge Components as a Composer package via our private Satis repository. To get started, add the following repository to your application's composer.json file:
-```json
-{
-    "repositories": [{
-        "type": "composer",
-    "url": "https://packagist.convergephp.com"
-  }]
-}
-```
-</x-slot:description>
-</x-converge::steps.step> -->
 
 <!-- STEP 3 -->
 <x-converge::steps.step number="1" title="Install">
@@ -98,3 +76,43 @@ To automate publishing of the Converge Components files every time you run `comp
 ],
 }
 ```
+
+
+## Security Concerns
+
+While this is a powerful feature in Converge, it can quickly become a security nightmare if not used with caution. It introduces serious security risks when rendering dynamic or user-controlled content.
+
+For example, if you use the divide component like this:
+
+```php
+<x-converge::divide
+    title="available methods in SidebarItem"
+    color="success"
+>
+{{ file_get_contents(base_bath('.env'))}}
+</x-converge::divide>
+```
+You’ve now exposed your entire .env file to the public. All environment variables are fully visible, including secrets and database credentials.
+
+This feature should only be used when trusted administrators are managing the documentation content.
+
+
+@blade
+<x-converge::alert type="warning">
+    Don't use this in user driven contents 
+</x-converge::alert>
+@endblade
+
+## Upcoming Solution in Converge Core
+
+We're actively working on a solution. Our current direction involves sandboxing these components or building a minimal Blade-like engine that supports only the Converge component syntax. The goal is to keep the developer experience identical to Blade while restricting access to dangerous PHP functions.
+
+## Your assignment
+
+- Ensure that all documentation content is managed exclusively by trusted administrators.
+
+- Carefully review all pull requests to the documentation repository — especially those modifying markdown files or using dynamic components.
+
+- Audit your entire documentation to confirm that no sensitive logic, data access, or insecure function calls (e.g., file_get_contents, exec, eval) are exposed through components.
+
+- Always remember: when using these components, there is no security layer between your application logic and the markdown content. Any misuse directly compromises your environment.
