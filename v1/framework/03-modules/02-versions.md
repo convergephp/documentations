@@ -50,7 +50,7 @@ Explicit version URLs must include a version label. it may used for versions dro
 >The examples above focus on customizing the default version — which is automatically inferred for basic or newly registered modules.
 
 ### Adding More Versions
-Before you can define additional versions, you must first assign a version label to the default version. see [label placeholder](#content-defining-a-version-label)
+Before you can define additional versions, you must first assign a version label to the default version. see [Defining a Version Label](#content-defining-a-version-label)
 
 To declare multiple versions, use the `defineVersions()` method:
 
@@ -92,7 +92,7 @@ public function module(Module $module): Module
 
 Inside the ``defineVersions()`` callback, you have access to two core methods:
 
-#### local versions
+#### Local Versions
 
 - `->add()` : Registers a local version stored and rendered by Converge.
 this function accept a closure as well and you need to setup the three buidling blocks needed by each version *label*,*route*,*contents*:
@@ -107,7 +107,7 @@ $versions->add(
     );
 ```
 
-the route given to each version is going to be suffixed friendly to the routepath given in the module eg: `docs/v2.x`, unless you invoke the `->asAbsolute()` method, so the version will accessed on `/v2.x`:
+The route given to each version is going to be suffixed friendly to the routepath given in the module eg: `docs/v2.x`, unless you invoke the `->asAbsolute()` method, so the version will accessed on `/v2.x`:
 
 ```php
 use Converge\Versions\Version;
@@ -120,9 +120,9 @@ $versions->add(
 
 > each versions may have it's own clusters you may refer to [clusters docs](clusters)
 
-#### external versions
+#### External Versions
 
-you may using converge to documente only latest versions of your software, and older versions may still in external places, converge also handle that easily for you, so to add an legacy, or external links version you may need to use `->addLink()` this function need 2 required building blocks `url()`, and `label()` :
+You may using converge to documente only latest versions of your software, and older versions may still in external places, converge also handle that easily for you, so to add an legacy, or external links version you may need to use `->addLink()` this function need 2 required building blocks `url()`, and `label()` :
 
 ```php
 use Converge\Versions\VersionLink;
@@ -134,9 +134,9 @@ $versions->addLink(
     );
 ```
 
-### version dropdown sorting
+### Version Dropdown Sorting
 
-converge will reverse the order you use during adding versions and build the dropdown, you may changes the sort of the versions by using the `->sort()`: method.
+Converge will reverse the order you use during adding versions and build the dropdown, you may changes the sort of the versions by using the `->sort()`: method.
 
 ```php
 use Converge\Versions\VersionLink;

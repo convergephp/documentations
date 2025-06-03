@@ -10,7 +10,7 @@ Menu items define navigational links or buttons that appear in your applicationâ
 
 
 ### Adding Menu Items
-menu items can be configured per module. To add a menu item:
+Menu items can be configured per module. To add a menu item:
 
 ```php
 use Converge\Module;
@@ -36,14 +36,14 @@ public function module(Module $module): Module
             })
 }
 ```
-every menu item has two essentiel configurations: `label` and `url`
+Every menu item has two essentiel configurations: `label` and `url`
 
 <x-converge::alert>
 `url` can be relative or absolute, as shown above
 </x-converge::alert>
 
 #### Menu Item Icon
-to add a icon to a menu item :
+To add a icon to a menu item:
 
 ```php
 $menuItems->add(
@@ -54,7 +54,7 @@ $menuItems->add(
 ```
 
 #### Menu Item Icon Position
-to add a icon to a menu item :
+To add a icon to a menu item:
 
 ```php
 use Converge\Enums\IconPosition;
@@ -160,15 +160,15 @@ you must hint `Converge\MenuItems\MenuItemGroup` for menu groups to work properl
 
 This allows you to group related links under a common label with full support for icons, styles, sorting, and more.
 
-since everything about single menu item links are documented above now let's focus on tweacking the dropdown button looks.
+Since everything about single menu item links are documented above now let's focus on tweacking the dropdown button looks.
 
 <x-converge::alert>
-the only required configuration for menu item group is the **label** using `$group->label('social links')`
+The only required configuration for menu item group is the **label** using `$group->label('social links')`
 </x-converge::alert>
  
 #### Open and Close Icons
 
-you can changes the icon when the dropdown is open or close:  
+You can changes the icon when the dropdown is open or close:  
 ```php
 use Converge\MenuItems\MenuItemGroup;
 $menuItems->add(

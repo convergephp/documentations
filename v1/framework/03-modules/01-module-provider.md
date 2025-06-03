@@ -5,9 +5,9 @@
 **Module providers** are the core building blocks in Converge. They are the *only* place where you configure documentation containers, known as **modules**.
 
 
-> the [Official Converge documentation](/docs)  is powered by its own module provider. You can view the full configuration on [Github](https://github.com/convergephp/convergephp.com/blob/master/app/Providers/Converge/DocsModuleProvider.php)
+> The [Official Converge documentation](/docs)  is powered by its own module provider. You can view the full configuration on [Github](https://github.com/convergephp/convergephp.com/blob/master/app/Providers/Converge/DocsModuleProvider.php)
 
-The official Converge documentation is powered by its own module provider. You can view the full configuration on GitHub.
+
 Each module acts as a fully isolated documentation instance, with its own:
 
 - file path (content source),
