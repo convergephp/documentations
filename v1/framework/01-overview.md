@@ -42,18 +42,18 @@ Converge comes with a custom-built [search engine](./search-engine) developed en
 
 ### Blade Component Support
 
-Converge scans your markdown files and renders any  [Blade component](/docs/components/getting-started/installation), It also comes with a set of pre-styled components, ranging from tips to custom code blocks.
+Converge scans your markdown files and renders any  [Blade component](/docs/components/getting-started/installation), it also comes with a set of pre-styled components, ranging from tips to custom code blocks.
 
 Here’s a sneak peek at some of the components:
 
 ```html
-this is in you mardown file
+this is in you markdown file
 <x-converge::alert>
 This approach can introduce a mess in zero downtime orchestration
 </x-converge::alert>
 ```
 
-this what it generate:
+This what it generates:
 
 <x-converge::alert>
 This approach can introduce a mess in zero downtime orchestration
@@ -80,5 +80,5 @@ With Converge, you’re not just documenting — you’re building a powerful, s
 ### Who is Behind Converge? 
 
 The **Converge Framework** was founded by:
-- [Charrafi Mohamed](https://github.com/CharrafiMed).
+- [Charrafi Mohamed](https://github.com/CharrafiMed)
 - [Ayoub El Hajji](https://github.com/Ayoubhj866)
