@@ -12,9 +12,6 @@ Converge  is written in PHP, JavaScript, and leverages several Laravel component
 
 @blade
 <x-converge::steps.vertical>
-<x-converge::alert>
-Since converge still in beta, make sure your Composer minimum stability is set to `beta`
-</x-converge::alert>
 <!-- STEP 1 -->
 <x-converge::steps.step
         number="1"
