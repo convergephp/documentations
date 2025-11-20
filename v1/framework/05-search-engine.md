@@ -21,7 +21,7 @@ If you're wondering how to handle search indexes in production, refer to the [de
 
 @blade
 <x-converge::alert type="warning">
-every you change your files contents (at this point headings #, ##, etc) you must re index your markdown contents
+everytime you change your files contents (at this point headings #, ##, etc) you must re index your markdown contents
 </x-converge::alert>
 @endblade
 
@@ -86,5 +86,6 @@ We believe that every **Converge powered** site should offer instant, private, a
 - ✅ No hidden fees
 
 - ✅ No data leaks
+
 
 Just fast, accessible documentation ready to go.
