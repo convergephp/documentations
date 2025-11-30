@@ -34,7 +34,7 @@ composer require convergephp/converge
         title="Generate new module provider">
 
 <x-slot:description>
-To start building documentation for your package or software, you need to create a **Module Provider** that will handle the configurationConverge includes a dedicated command to scaffold this for you.
+To start building documentation for your package or software, you need to create a **Module Provider** that will handle the configuration. Converge includes a dedicated command to scaffold this for you.
 ```bash
 php artisan converge:make-module DocsModuleProvider
 ```
