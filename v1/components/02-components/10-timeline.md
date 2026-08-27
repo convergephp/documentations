@@ -62,7 +62,7 @@ Perfect for showcasing:
 - Support for multiple themes
 - Documentation mirrors filesystem structure
 - Use Blade components directly within Markdown
-- [And more](https://convergephp.com/roadmap)
+- [And more](https://converge.charrafi.com/roadmap)
 
 ```php
 return $module
@@ -88,7 +88,7 @@ Additional content can go here outside the description slot.
 - Single Page Application (SPA) mode
 - Lazy-load sub-items for better performance
 - Feedback and Ratings system
-- [And more](https://convergephp.com/roadmap)
+- [And more](https://converge.charrafi.com/roadmap)
 </x-slot:description>
 </x-converge::timeline.step>
 </x-converge::timeline>
@@ -105,7 +105,7 @@ Additional content can go here outside the description slot.
     - Support for multiple themes
     - Documentation mirrors filesystem structure
     - Use Blade components directly within Markdown
-    - [And more](https://convergephp.com/roadmap)
+    - [And more](https://converge.charrafi.com/roadmap)
 
     ```php
     return $module
@@ -131,7 +131,7 @@ Additional content can go here outside the description slot.
     - Single Page Application (SPA) mode
     - Lazy-load sub-items for better performance
     - Feedback and Ratings system
-    - [And more](https://convergephp.com/roadmap)
+    - [And more](https://converge.charrafi.com/roadmap)
     </x-slot:description>
 </x-converge::timeline.step>
 </x-converge::timeline>

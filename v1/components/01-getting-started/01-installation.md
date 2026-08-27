@@ -14,7 +14,7 @@ Converge Components are pure Laravel blade components enhanced with the Converge
 
 - PHP >= 8.3
 - Laravel >= 11.x
-- [Converge]('https://convergephp.com/docs/intallation') Framework
+- [Converge]('https://converge.charrafi.com/docs/intallation') Framework
 
 ## Installation
 

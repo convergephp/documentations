@@ -26,7 +26,7 @@ Getting started with the Image component requires minimal configuration:
 
 ## Image Source Options
 
-Please refer to [card image](https://convergephp.com/docs/components/components/card-image#content-image-source-options) to learn more about image source.
+Please refer to [card image](https://converge.charrafi.com/docs/components/components/card-image#content-image-source-options) to learn more about image source.
 
 ## Theme-Aware Images
 

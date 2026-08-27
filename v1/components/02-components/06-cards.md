@@ -8,8 +8,8 @@ category: UI Components
 
 The Card component provides a clean, versatile container for various content types, featuring customizable icons, colors, and optional link functionality.
 
-- Use [image card]('https://convergephp.com/docs/card-image'), for images cards
-- Use [grid]('https://convergephp.com/docs/card-grid'), for columns grid
+- Use [image card]('https://converge.charrafi.com/docs/card-image'), for images cards
+- Use [grid]('https://converge.charrafi.com/docs/card-grid'), for columns grid
 
 ## Basic Usage
 

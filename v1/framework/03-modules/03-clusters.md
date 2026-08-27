@@ -47,7 +47,7 @@ public function module(Module $module): Module
                 // Add a link-type cluster
                 $clusters->addLink(
                     fn(ClusterLink $cluster) => $cluster
-                        ->url('www.convergephp.com/blog')
+                        ->url('www.converge.charrafi.com/blog')
                         ->label('Blog')
                 );
             })

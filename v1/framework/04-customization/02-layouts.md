@@ -1,6 +1,6 @@
 # Layout Customization
 
-Converge provides several pre-built layouts that are responsive and consistent with your [theming](https://convergephp.com/docs/customization/themes) customizations. Each layout offers a unique visual structure and user experience tailored for different documentation needs.
+Converge provides several pre-built layouts that are responsive and consistent with your [theming](https://converge.charrafi.com/docs/customization/themes) customizations. Each layout offers a unique visual structure and user experience tailored for different documentation needs.
 
 You may customize your documentation layout using the `layout()` function directly on the module:
 
