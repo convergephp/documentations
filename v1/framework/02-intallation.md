@@ -12,9 +12,6 @@ Converge  is written in PHP, JavaScript, and leverages several Laravel component
 
 @blade
 <x-converge::steps.vertical>
-<x-converge::alert>
-since converge still in beta, make sure your Composer minimum stability is set to `beta`
-</x-converge::alert>
 <!-- STEP 1 -->
 <x-converge::steps.step
         number="1"
@@ -37,14 +34,14 @@ composer require convergephp/converge
         title="Generate new module provider">
 
 <x-slot:description>
-To start building documentation for your package or software, you need to create a **Module Provider** that will handle the configurationConverge includes a dedicated command to scaffold this for you.
+To start building documentation for your package or software, you need to create a **Module Provider** that will handle the configuration. Converge includes a dedicated command to scaffold this for you.
 ```bash
 php artisan converge:make-module DocsModuleProvider
 ```
 </x-slot:description>
 
 <x-converge::alert>
-you can omit ModuleProvider suffix
+You can omit ModuleProvider suffix
 </x-converge::alert>
 
 </x-converge::steps.step>
@@ -53,7 +50,7 @@ you can omit ModuleProvider suffix
 <!-- STEP 3 -->
 <x-converge::steps.step
         number="3"
-        title="publish the starterkit">
+        title="Publish the starterkit">
 
 <x-slot:description>
 **This publishes a starter documentation structure with file conventions to help you get started quickly.**

@@ -54,13 +54,13 @@ public function module(Module $module): Module
 }
 ```
 
-### Why default Clusters setup needed ?
+### Why is a default Clusters needed ?
 
 Whenever you need to add a cluster for a specific version, you must set up a default cluster by marking it with  `->default()`, A default cluster behaves like a regular cluster but, by default, uses the path provided to the version itself to serve its contents.
 
 @blade
 <x-converge::alert>
-in fresh module it will use the path provided to the `in()` to serve contents
+In fresh modules converge will use the path provided to the `in()` to serve contents
 </x-converge::alert>
 @endblade
 
